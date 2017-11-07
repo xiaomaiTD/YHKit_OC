@@ -13,9 +13,19 @@
 		EE817A4A1FAC696F003AC5B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE817A491FAC696F003AC5B6 /* Assets.xcassets */; };
 		EE817A4D1FAC696F003AC5B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE817A4B1FAC696F003AC5B6 /* LaunchScreen.storyboard */; };
 		EE817A501FAC696F003AC5B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A4F1FAC696F003AC5B6 /* main.m */; };
+		EE817A591FAC6BCA003AC5B6 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A571FAC6BC9003AC5B6 /* DeviceUtil.m */; };
+		EE817A5B1FAC6CE1003AC5B6 /* DeviceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE817A5A1FAC6CE1003AC5B6 /* DeviceList.plist */; };
+		EE817A5F1FAC6D50003AC5B6 /* YHDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A5E1FAC6D50003AC5B6 /* YHDeviceUtil.m */; };
+		EEDC1D991FB1468500082DDA /* YHAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1D981FB1468500082DDA /* YHAlertController.m */; };
+		EEDC1D9F1FB1806F00082DDA /* YHAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1D9E1FB1806F00082DDA /* YHAuthorization.m */; };
+		EEDC1DA21FB1BCCF00082DDA /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1DA11FB1BCCF00082DDA /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE0B20691FB00C3C001DB83E /* YHColorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHColorMacro.h; sourceTree = "<group>"; };
+		EE0B206A1FB00D2B001DB83E /* YHSizeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHSizeMacro.h; sourceTree = "<group>"; };
+		EE0B206B1FB00D83001DB83E /* YHDebugMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHDebugMacro.h; sourceTree = "<group>"; };
+		EE0B206C1FB00DBE001DB83E /* YHMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMacroHeader.h; sourceTree = "<group>"; };
 		EE817A3D1FAC696F003AC5B6 /* YHKit_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHKit_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE817A401FAC696F003AC5B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE817A411FAC696F003AC5B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +36,18 @@
 		EE817A4C1FAC696F003AC5B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE817A4E1FAC696F003AC5B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE817A4F1FAC696F003AC5B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE817A571FAC6BC9003AC5B6 /* DeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUtil.m; sourceTree = "<group>"; };
+		EE817A581FAC6BC9003AC5B6 /* DeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUtil.h; sourceTree = "<group>"; };
+		EE817A5A1FAC6CE1003AC5B6 /* DeviceList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceList.plist; sourceTree = "<group>"; };
+		EE817A5D1FAC6D50003AC5B6 /* YHDeviceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHDeviceUtil.h; sourceTree = "<group>"; };
+		EE817A5E1FAC6D50003AC5B6 /* YHDeviceUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHDeviceUtil.m; sourceTree = "<group>"; };
+		EEDC1D971FB1468500082DDA /* YHAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAlertController.h; sourceTree = "<group>"; };
+		EEDC1D981FB1468500082DDA /* YHAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAlertController.m; sourceTree = "<group>"; };
+		EEDC1D9A1FB158D900082DDA /* YHKit_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHKit_OC.h; sourceTree = "<group>"; };
+		EEDC1D9D1FB1806F00082DDA /* YHAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAuthorization.h; sourceTree = "<group>"; };
+		EEDC1D9E1FB1806F00082DDA /* YHAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAuthorization.m; sourceTree = "<group>"; };
+		EEDC1DA01FB1BCCF00082DDA /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		EEDC1DA11FB1BCCF00082DDA /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +61,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE0B20681FB00C09001DB83E /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				EE0B206C1FB00DBE001DB83E /* YHMacroHeader.h */,
+				EE0B20691FB00C3C001DB83E /* YHColorMacro.h */,
+				EE0B206B1FB00D83001DB83E /* YHDebugMacro.h */,
+				EE0B206A1FB00D2B001DB83E /* YHSizeMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
 		EE817A341FAC696F003AC5B6 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +95,12 @@
 				EE817A411FAC696F003AC5B6 /* AppDelegate.m */,
 				EE817A431FAC696F003AC5B6 /* ViewController.h */,
 				EE817A441FAC696F003AC5B6 /* ViewController.m */,
+				EEDC1DA01FB1BCCF00082DDA /* Test.h */,
+				EEDC1DA11FB1BCCF00082DDA /* Test.m */,
+				EE817A581FAC6BC9003AC5B6 /* DeviceUtil.h */,
+				EE817A571FAC6BC9003AC5B6 /* DeviceUtil.m */,
+				EE817A5A1FAC6CE1003AC5B6 /* DeviceList.plist */,
+				EE817A561FAC69A2003AC5B6 /* YHKit_OC */,
 				EE817A461FAC696F003AC5B6 /* Main.storyboard */,
 				EE817A491FAC696F003AC5B6 /* Assets.xcassets */,
 				EE817A4B1FAC696F003AC5B6 /* LaunchScreen.storyboard */,
@@ -69,6 +108,53 @@
 				EE817A4F1FAC696F003AC5B6 /* main.m */,
 			);
 			path = YHKit_OC;
+			sourceTree = "<group>";
+		};
+		EE817A561FAC69A2003AC5B6 /* YHKit_OC */ = {
+			isa = PBXGroup;
+			children = (
+				EEDC1D9A1FB158D900082DDA /* YHKit_OC.h */,
+				EEDC1D9C1FB1803B00082DDA /* Authorization */,
+				EEDC1D9B1FB1637300082DDA /* Album */,
+				EEDC1D961FB1464D00082DDA /* Alert */,
+				EE0B20681FB00C09001DB83E /* Macro */,
+				EE817A5C1FAC6D27003AC5B6 /* Device */,
+			);
+			path = YHKit_OC;
+			sourceTree = "<group>";
+		};
+		EE817A5C1FAC6D27003AC5B6 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				EE817A5D1FAC6D50003AC5B6 /* YHDeviceUtil.h */,
+				EE817A5E1FAC6D50003AC5B6 /* YHDeviceUtil.m */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		EEDC1D961FB1464D00082DDA /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				EEDC1D971FB1468500082DDA /* YHAlertController.h */,
+				EEDC1D981FB1468500082DDA /* YHAlertController.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		EEDC1D9B1FB1637300082DDA /* Album */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		EEDC1D9C1FB1803B00082DDA /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				EEDC1D9D1FB1806F00082DDA /* YHAuthorization.h */,
+				EEDC1D9E1FB1806F00082DDA /* YHAuthorization.m */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +189,11 @@
 					EE817A3C1FAC696F003AC5B6 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -131,6 +222,7 @@
 			files = (
 				EE817A4D1FAC696F003AC5B6 /* LaunchScreen.storyboard in Resources */,
 				EE817A4A1FAC696F003AC5B6 /* Assets.xcassets in Resources */,
+				EE817A5B1FAC6CE1003AC5B6 /* DeviceList.plist in Resources */,
 				EE817A481FAC696F003AC5B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,8 +235,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE817A451FAC696F003AC5B6 /* ViewController.m in Sources */,
+				EEDC1DA21FB1BCCF00082DDA /* Test.m in Sources */,
+				EE817A591FAC6BCA003AC5B6 /* DeviceUtil.m in Sources */,
 				EE817A501FAC696F003AC5B6 /* main.m in Sources */,
+				EEDC1D9F1FB1806F00082DDA /* YHAuthorization.m in Sources */,
+				EEDC1D991FB1468500082DDA /* YHAlertController.m in Sources */,
 				EE817A421FAC696F003AC5B6 /* AppDelegate.m in Sources */,
+				EE817A5F1FAC6D50003AC5B6 /* YHDeviceUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V9VN23VE8;
 				INFOPLIST_FILE = YHKit_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yinhe.YHKit-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V9VN23VE8;
 				INFOPLIST_FILE = YHKit_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yinhe.YHKit-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

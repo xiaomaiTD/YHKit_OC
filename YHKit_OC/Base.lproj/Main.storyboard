@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,107 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ui-LA-Qv8">
+                                <rect key="frame" x="87.5" y="80" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0Bv-Vq-h74"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="352-UJ-SKB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="自定义封装系统Alert测试"/>
+                                <connections>
+                                    <action selector="alertTestAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NIH-Jy-CXh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lre-yY-90Z">
+                                <rect key="frame" x="87.5" y="160" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AjI-x0-yc3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="dng-nZ-5vd"/>
+                                </constraints>
+                                <state key="normal" title="相册权限测试"/>
+                                <connections>
+                                    <action selector="photoLibraryAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D7j-g8-xB2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb8-YD-oxK">
+                                <rect key="frame" x="87" y="240" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="IWx-ls-QHK"/>
+                                    <constraint firstAttribute="height" constant="40" id="Kda-dt-Djt"/>
+                                </constraints>
+                                <state key="normal" title="相机权限测试"/>
+                                <connections>
+                                    <action selector="camera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5tu-k2-DZu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRT-1M-b2b">
+                                <rect key="frame" x="87.5" y="320" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lqu-Pa-olc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="lx2-p2-ItN"/>
+                                </constraints>
+                                <state key="normal" title="通讯录权限测试"/>
+                                <connections>
+                                    <action selector="adressBookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdq-U4-hPe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qP-XV-HEV">
+                                <rect key="frame" x="87.5" y="400" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="mMn-h2-jl2"/>
+                                    <constraint firstAttribute="height" constant="40" id="skx-uf-h7m"/>
+                                </constraints>
+                                <state key="normal" title="麦克风权限测试"/>
+                                <connections>
+                                    <action selector="microphoneAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s83-Nv-Lwc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpc-Q0-L7w">
+                                <rect key="frame" x="80" y="480" width="215" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="K4M-QL-2hf"/>
+                                    <constraint firstAttribute="height" constant="40" id="pqW-jj-5lc"/>
+                                </constraints>
+                                <state key="normal" title="地理位置权限测试（使用期间）"/>
+                                <connections>
+                                    <action selector="locationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HC1-LW-YCY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="111-3n-Aqt">
+                                <rect key="frame" x="80" y="560" width="215" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9Rl-1A-TvG"/>
+                                    <constraint firstAttribute="height" constant="40" id="M3g-vt-kjA"/>
+                                </constraints>
+                                <state key="normal" title="地理位置权限测试（一直允许）"/>
+                                <connections>
+                                    <action selector="locationAlwaysAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i2E-VJ-UDk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7qP-XV-HEV" firstAttribute="top" secondItem="kRT-1M-b2b" secondAttribute="bottom" constant="40" id="4Ab-mL-q9K"/>
+                            <constraint firstItem="Dpc-Q0-L7w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5N9-qr-gLG"/>
+                            <constraint firstItem="7qP-XV-HEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ehd-tc-8a2"/>
+                            <constraint firstItem="cb8-YD-oxK" firstAttribute="top" secondItem="Lre-yY-90Z" secondAttribute="bottom" constant="40" id="IKz-x4-c9s"/>
+                            <constraint firstItem="cb8-YD-oxK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VtT-AT-fj0"/>
+                            <constraint firstItem="Lre-yY-90Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X97-Hk-Vv7"/>
+                            <constraint firstItem="111-3n-Aqt" firstAttribute="top" secondItem="Dpc-Q0-L7w" secondAttribute="bottom" constant="40" id="are-fP-EfR"/>
+                            <constraint firstItem="Lre-yY-90Z" firstAttribute="top" secondItem="6Ui-LA-Qv8" secondAttribute="bottom" constant="40" id="dFd-DU-XV4"/>
+                            <constraint firstItem="6Ui-LA-Qv8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="gum-Rz-fmj"/>
+                            <constraint firstItem="kRT-1M-b2b" firstAttribute="top" secondItem="cb8-YD-oxK" secondAttribute="bottom" constant="40" id="j5b-zc-diK"/>
+                            <constraint firstItem="Dpc-Q0-L7w" firstAttribute="top" secondItem="7qP-XV-HEV" secondAttribute="bottom" constant="40" id="tQg-wd-9jd"/>
+                            <constraint firstItem="kRT-1M-b2b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uv0-OD-4BA"/>
+                            <constraint firstItem="6Ui-LA-Qv8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vgS-Ah-ioZ"/>
+                            <constraint firstItem="111-3n-Aqt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yR0-YN-If4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
