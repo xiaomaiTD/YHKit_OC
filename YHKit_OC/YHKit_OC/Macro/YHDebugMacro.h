@@ -10,7 +10,7 @@
 #define YHDebugMacro_h
 
 #ifdef DEBUG
-    #define YHLog(...)   NSLog(@">>>:%@",[NSString stringWithFormat:__VA_ARGS__])
+    #define YHLog(...)   NSLog(@"--->:%@",[NSString stringWithFormat:__VA_ARGS__])
 #else
     #define YHLog(...)
 #endif

@@ -12,7 +12,11 @@
 #import "YHAlertController.h"
 #import "YHMacroHeader.h"
 #import "YHDeviceUtil.h"
-#import "YHAuthorization.h"
+#import "NSObject+YHAuthorization.h"
+#import "YHNotification.h"
+#import "YHMBHud.h"
+#import "UIViewController+YHSystemPhoto.h"
+#import "UIViewController+YHCustomNaviBar.h"
 
 
 #endif /* YHKit_OC_h */

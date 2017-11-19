@@ -7,8 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "TestViewController.h"
 
-@interface AppDelegate ()
+#import "YHKit_OC.h"
+
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+    #import <UserNotifications/UserNotifications.h>
+#endif
+
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
@@ -16,11 +24,37 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor orangeColor];
+    [self.window makeKeyAndVisible];
+    
+    TestViewController *t = [[TestViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:t];
+    [navi setNavigationBarHidden:YES];
+    self.window.rootViewController = navi;
+    
+    
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+    if (@available(iOS 10_0, *)) {
+        [YHNotification yh_registerNotificationWithDelegate:self];
+    }
+#else
+    [YHNotification yh_registerNotification];
+#endif
+    [YHNotification yh_rigsterAPNs];
+    
+    
     return YES;
 }
 
-
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSLog(@"%@",deviceToken);
+}
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"%@",error);
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

@@ -12,6 +12,9 @@
 #import "YHColorMacro.h"
 #import "YHDebugMacro.h"
 #import "YHSizeMacro.h"
-
+#import "YHThreadMacro.h"
+#import "YHRuntimeMacro.h"
+#import "YHOtherMacro.h"
+#import "YHDeviceMacro.h"
 
 #endif /* YHMacroHeader_h */

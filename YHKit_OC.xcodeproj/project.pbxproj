@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42D612DCC3D3CB9D7092342A /* libPods-YHKit_OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4538AE72479A1E8F3192A /* libPods-YHKit_OC.a */; };
 		EE817A421FAC696F003AC5B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A411FAC696F003AC5B6 /* AppDelegate.m */; };
 		EE817A451FAC696F003AC5B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A441FAC696F003AC5B6 /* ViewController.m */; };
 		EE817A481FAC696F003AC5B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE817A461FAC696F003AC5B6 /* Main.storyboard */; };
@@ -16,12 +17,20 @@
 		EE817A591FAC6BCA003AC5B6 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A571FAC6BC9003AC5B6 /* DeviceUtil.m */; };
 		EE817A5B1FAC6CE1003AC5B6 /* DeviceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE817A5A1FAC6CE1003AC5B6 /* DeviceList.plist */; };
 		EE817A5F1FAC6D50003AC5B6 /* YHDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A5E1FAC6D50003AC5B6 /* YHDeviceUtil.m */; };
+		EEAF8B961FB54A0E00516929 /* UIViewController+YHSystemPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF8B951FB54A0E00516929 /* UIViewController+YHSystemPhoto.m */; };
+		EEAF8BA01FB5969900516929 /* YHMBHud.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF8B9F1FB5969900516929 /* YHMBHud.m */; };
 		EEDC1D991FB1468500082DDA /* YHAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1D981FB1468500082DDA /* YHAlertController.m */; };
-		EEDC1D9F1FB1806F00082DDA /* YHAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1D9E1FB1806F00082DDA /* YHAuthorization.m */; };
 		EEDC1DA21FB1BCCF00082DDA /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1DA11FB1BCCF00082DDA /* Test.m */; };
+		EEFB1BEE1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFB1BED1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m */; };
+		EEFB1BF11FB94CA10092DCE9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFB1BF01FB94CA10092DCE9 /* TestViewController.m */; };
+		EEFF525B1FC15CFE00B706EA /* YHNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF525A1FC15CFE00B706EA /* YHNotification.m */; };
+		EEFF525F1FC183BC00B706EA /* NSObject+YHAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF525E1FC183BC00B706EA /* NSObject+YHAuthorization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05AB82F771419C456D1D5EAF /* Pods-YHKit_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHKit_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YHKit_OC/Pods-YHKit_OC.debug.xcconfig"; sourceTree = "<group>"; };
+		4CB4538AE72479A1E8F3192A /* libPods-YHKit_OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YHKit_OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58320E584C867615DB172560 /* Pods-YHKit_OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHKit_OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-YHKit_OC/Pods-YHKit_OC.release.xcconfig"; sourceTree = "<group>"; };
 		EE0B20691FB00C3C001DB83E /* YHColorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHColorMacro.h; sourceTree = "<group>"; };
 		EE0B206A1FB00D2B001DB83E /* YHSizeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHSizeMacro.h; sourceTree = "<group>"; };
 		EE0B206B1FB00D83001DB83E /* YHDebugMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHDebugMacro.h; sourceTree = "<group>"; };
@@ -41,13 +50,28 @@
 		EE817A5A1FAC6CE1003AC5B6 /* DeviceList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceList.plist; sourceTree = "<group>"; };
 		EE817A5D1FAC6D50003AC5B6 /* YHDeviceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHDeviceUtil.h; sourceTree = "<group>"; };
 		EE817A5E1FAC6D50003AC5B6 /* YHDeviceUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHDeviceUtil.m; sourceTree = "<group>"; };
+		EEAF8B941FB54A0E00516929 /* UIViewController+YHSystemPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YHSystemPhoto.h"; sourceTree = "<group>"; };
+		EEAF8B951FB54A0E00516929 /* UIViewController+YHSystemPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YHSystemPhoto.m"; sourceTree = "<group>"; };
+		EEAF8B9E1FB5969900516929 /* YHMBHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMBHud.h; sourceTree = "<group>"; };
+		EEAF8B9F1FB5969900516929 /* YHMBHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHMBHud.m; sourceTree = "<group>"; };
+		EEB3AF501FBC368100296338 /* YHDeviceMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHDeviceMacro.h; sourceTree = "<group>"; };
 		EEDC1D971FB1468500082DDA /* YHAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAlertController.h; sourceTree = "<group>"; };
 		EEDC1D981FB1468500082DDA /* YHAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAlertController.m; sourceTree = "<group>"; };
 		EEDC1D9A1FB158D900082DDA /* YHKit_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHKit_OC.h; sourceTree = "<group>"; };
-		EEDC1D9D1FB1806F00082DDA /* YHAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAuthorization.h; sourceTree = "<group>"; };
-		EEDC1D9E1FB1806F00082DDA /* YHAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAuthorization.m; sourceTree = "<group>"; };
 		EEDC1DA01FB1BCCF00082DDA /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		EEDC1DA11FB1BCCF00082DDA /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		EEFB1BE91FB941790092DCE9 /* YHOtherMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHOtherMacro.h; sourceTree = "<group>"; };
+		EEFB1BEA1FB941930092DCE9 /* YHThreadMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHThreadMacro.h; sourceTree = "<group>"; };
+		EEFB1BEC1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YHCustomNaviBar.h"; sourceTree = "<group>"; };
+		EEFB1BED1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YHCustomNaviBar.m"; sourceTree = "<group>"; };
+		EEFB1BEF1FB94CA10092DCE9 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		EEFB1BF01FB94CA10092DCE9 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		EEFB1BF21FB983E60092DCE9 /* YHRuntimeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHRuntimeMacro.h; sourceTree = "<group>"; };
+		EEFF52591FC15CFE00B706EA /* YHNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNotification.h; sourceTree = "<group>"; };
+		EEFF525A1FC15CFE00B706EA /* YHNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNotification.m; sourceTree = "<group>"; };
+		EEFF525C1FC17B4400B706EA /* YHKit_OC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YHKit_OC.entitlements; sourceTree = "<group>"; };
+		EEFF525D1FC183BC00B706EA /* NSObject+YHAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+YHAuthorization.h"; sourceTree = "<group>"; };
+		EEFF525E1FC183BC00B706EA /* NSObject+YHAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YHAuthorization.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +79,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D612DCC3D3CB9D7092342A /* libPods-YHKit_OC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		697F7A191AACFBDE821B3017 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05AB82F771419C456D1D5EAF /* Pods-YHKit_OC.debug.xcconfig */,
+				58320E584C867615DB172560 /* Pods-YHKit_OC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A6912D1D222C4929C6A84340 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CB4538AE72479A1E8F3192A /* libPods-YHKit_OC.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE0B20681FB00C09001DB83E /* Macro */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +110,10 @@
 				EE0B20691FB00C3C001DB83E /* YHColorMacro.h */,
 				EE0B206B1FB00D83001DB83E /* YHDebugMacro.h */,
 				EE0B206A1FB00D2B001DB83E /* YHSizeMacro.h */,
+				EEFB1BE91FB941790092DCE9 /* YHOtherMacro.h */,
+				EEFB1BEA1FB941930092DCE9 /* YHThreadMacro.h */,
+				EEFB1BF21FB983E60092DCE9 /* YHRuntimeMacro.h */,
+				EEB3AF501FBC368100296338 /* YHDeviceMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -77,6 +123,8 @@
 			children = (
 				EE817A3F1FAC696F003AC5B6 /* YHKit_OC */,
 				EE817A3E1FAC696F003AC5B6 /* Products */,
+				697F7A191AACFBDE821B3017 /* Pods */,
+				A6912D1D222C4929C6A84340 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,10 +139,13 @@
 		EE817A3F1FAC696F003AC5B6 /* YHKit_OC */ = {
 			isa = PBXGroup;
 			children = (
+				EEFF525C1FC17B4400B706EA /* YHKit_OC.entitlements */,
 				EE817A401FAC696F003AC5B6 /* AppDelegate.h */,
 				EE817A411FAC696F003AC5B6 /* AppDelegate.m */,
 				EE817A431FAC696F003AC5B6 /* ViewController.h */,
 				EE817A441FAC696F003AC5B6 /* ViewController.m */,
+				EEFB1BEF1FB94CA10092DCE9 /* TestViewController.h */,
+				EEFB1BF01FB94CA10092DCE9 /* TestViewController.m */,
 				EEDC1DA01FB1BCCF00082DDA /* Test.h */,
 				EEDC1DA11FB1BCCF00082DDA /* Test.m */,
 				EE817A581FAC6BC9003AC5B6 /* DeviceUtil.h */,
@@ -114,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				EEDC1D9A1FB158D900082DDA /* YHKit_OC.h */,
+				EEFB1BEB1FB945D10092DCE9 /* CustomNaviBar */,
+				EEAF8B9D1FB5966E00516929 /* MB_HUD */,
+				EEAF8B931FB5420A00516929 /* SystemPhoto */,
 				EEDC1D9C1FB1803B00082DDA /* Authorization */,
 				EEDC1D9B1FB1637300082DDA /* Album */,
 				EEDC1D961FB1464D00082DDA /* Alert */,
@@ -130,6 +184,24 @@
 				EE817A5E1FAC6D50003AC5B6 /* YHDeviceUtil.m */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		EEAF8B931FB5420A00516929 /* SystemPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				EEAF8B941FB54A0E00516929 /* UIViewController+YHSystemPhoto.h */,
+				EEAF8B951FB54A0E00516929 /* UIViewController+YHSystemPhoto.m */,
+			);
+			path = SystemPhoto;
+			sourceTree = "<group>";
+		};
+		EEAF8B9D1FB5966E00516929 /* MB_HUD */ = {
+			isa = PBXGroup;
+			children = (
+				EEAF8B9E1FB5969900516929 /* YHMBHud.h */,
+				EEAF8B9F1FB5969900516929 /* YHMBHud.m */,
+			);
+			path = MB_HUD;
 			sourceTree = "<group>";
 		};
 		EEDC1D961FB1464D00082DDA /* Alert */ = {
@@ -151,10 +223,21 @@
 		EEDC1D9C1FB1803B00082DDA /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				EEDC1D9D1FB1806F00082DDA /* YHAuthorization.h */,
-				EEDC1D9E1FB1806F00082DDA /* YHAuthorization.m */,
+				EEFF525D1FC183BC00B706EA /* NSObject+YHAuthorization.h */,
+				EEFF525E1FC183BC00B706EA /* NSObject+YHAuthorization.m */,
+				EEFF52591FC15CFE00B706EA /* YHNotification.h */,
+				EEFF525A1FC15CFE00B706EA /* YHNotification.m */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		EEFB1BEB1FB945D10092DCE9 /* CustomNaviBar */ = {
+			isa = PBXGroup;
+			children = (
+				EEFB1BEC1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.h */,
+				EEFB1BED1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m */,
+			);
+			path = CustomNaviBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE817A531FAC696F003AC5B6 /* Build configuration list for PBXNativeTarget "YHKit_OC" */;
 			buildPhases = (
+				D72CF5956E723522CFDE2E24 /* [CP] Check Pods Manifest.lock */,
 				EE817A391FAC696F003AC5B6 /* Sources */,
 				EE817A3A1FAC696F003AC5B6 /* Frameworks */,
 				EE817A3B1FAC696F003AC5B6 /* Resources */,
+				A0785BC865442F8114053EB0 /* [CP] Embed Pods Frameworks */,
+				9E30497E026032C15920D62E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +278,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -229,6 +318,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E30497E026032C15920D62E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHKit_OC/Pods-YHKit_OC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0785BC865442F8114053EB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHKit_OC/Pods-YHKit_OC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D72CF5956E723522CFDE2E24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EE817A391FAC696F003AC5B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -237,11 +374,16 @@
 				EE817A451FAC696F003AC5B6 /* ViewController.m in Sources */,
 				EEDC1DA21FB1BCCF00082DDA /* Test.m in Sources */,
 				EE817A591FAC6BCA003AC5B6 /* DeviceUtil.m in Sources */,
+				EEAF8BA01FB5969900516929 /* YHMBHud.m in Sources */,
 				EE817A501FAC696F003AC5B6 /* main.m in Sources */,
-				EEDC1D9F1FB1806F00082DDA /* YHAuthorization.m in Sources */,
+				EEFF525B1FC15CFE00B706EA /* YHNotification.m in Sources */,
+				EEFB1BF11FB94CA10092DCE9 /* TestViewController.m in Sources */,
 				EEDC1D991FB1468500082DDA /* YHAlertController.m in Sources */,
+				EEFF525F1FC183BC00B706EA /* NSObject+YHAuthorization.m in Sources */,
+				EEAF8B961FB54A0E00516929 /* UIViewController+YHSystemPhoto.m in Sources */,
 				EE817A421FAC696F003AC5B6 /* AppDelegate.m in Sources */,
 				EE817A5F1FAC6D50003AC5B6 /* YHDeviceUtil.m in Sources */,
+				EEFB1BEE1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,8 +515,10 @@
 		};
 		EE817A541FAC696F003AC5B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05AB82F771419C456D1D5EAF /* Pods-YHKit_OC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YHKit_OC/YHKit_OC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V9VN23VE8;
 				INFOPLIST_FILE = YHKit_OC/Info.plist;
@@ -388,8 +532,10 @@
 		};
 		EE817A551FAC696F003AC5B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58320E584C867615DB172560 /* Pods-YHKit_OC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YHKit_OC/YHKit_OC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V9VN23VE8;
 				INFOPLIST_FILE = YHKit_OC/Info.plist;
