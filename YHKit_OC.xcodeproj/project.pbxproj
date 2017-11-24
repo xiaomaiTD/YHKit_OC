@@ -19,6 +19,8 @@
 		EE817A5F1FAC6D50003AC5B6 /* YHDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A5E1FAC6D50003AC5B6 /* YHDeviceUtil.m */; };
 		EEAF8B961FB54A0E00516929 /* UIViewController+YHSystemPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF8B951FB54A0E00516929 /* UIViewController+YHSystemPhoto.m */; };
 		EEAF8BA01FB5969900516929 /* YHMBHud.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF8B9F1FB5969900516929 /* YHMBHud.m */; };
+		EEC1B3F91FC5BF9600A4335E /* YHNet.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC1B3F81FC5BF9600A4335E /* YHNet.m */; };
+		EEC1B3FD1FC5C98900A4335E /* NSString+YHExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC1B3FC1FC5C98900A4335E /* NSString+YHExchange.m */; };
 		EEDC1D991FB1468500082DDA /* YHAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1D981FB1468500082DDA /* YHAlertController.m */; };
 		EEDC1DA21FB1BCCF00082DDA /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDC1DA11FB1BCCF00082DDA /* Test.m */; };
 		EEFB1BEE1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFB1BED1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m */; };
@@ -55,6 +57,10 @@
 		EEAF8B9E1FB5969900516929 /* YHMBHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMBHud.h; sourceTree = "<group>"; };
 		EEAF8B9F1FB5969900516929 /* YHMBHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHMBHud.m; sourceTree = "<group>"; };
 		EEB3AF501FBC368100296338 /* YHDeviceMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHDeviceMacro.h; sourceTree = "<group>"; };
+		EEC1B3F71FC5BF9600A4335E /* YHNet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNet.h; sourceTree = "<group>"; };
+		EEC1B3F81FC5BF9600A4335E /* YHNet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNet.m; sourceTree = "<group>"; };
+		EEC1B3FB1FC5C98900A4335E /* NSString+YHExchange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YHExchange.h"; sourceTree = "<group>"; };
+		EEC1B3FC1FC5C98900A4335E /* NSString+YHExchange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YHExchange.m"; sourceTree = "<group>"; };
 		EEDC1D971FB1468500082DDA /* YHAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAlertController.h; sourceTree = "<group>"; };
 		EEDC1D981FB1468500082DDA /* YHAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAlertController.m; sourceTree = "<group>"; };
 		EEDC1D9A1FB158D900082DDA /* YHKit_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHKit_OC.h; sourceTree = "<group>"; };
@@ -165,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				EEDC1D9A1FB158D900082DDA /* YHKit_OC.h */,
+				EEC1B3FA1FC5C92E00A4335E /* String_Category */,
+				EEC1B3F61FC5BF7000A4335E /* Network */,
 				EEFB1BEB1FB945D10092DCE9 /* CustomNaviBar */,
 				EEAF8B9D1FB5966E00516929 /* MB_HUD */,
 				EEAF8B931FB5420A00516929 /* SystemPhoto */,
@@ -202,6 +210,24 @@
 				EEAF8B9F1FB5969900516929 /* YHMBHud.m */,
 			);
 			path = MB_HUD;
+			sourceTree = "<group>";
+		};
+		EEC1B3F61FC5BF7000A4335E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EEC1B3F71FC5BF9600A4335E /* YHNet.h */,
+				EEC1B3F81FC5BF9600A4335E /* YHNet.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EEC1B3FA1FC5C92E00A4335E /* String_Category */ = {
+			isa = PBXGroup;
+			children = (
+				EEC1B3FB1FC5C98900A4335E /* NSString+YHExchange.h */,
+				EEC1B3FC1FC5C98900A4335E /* NSString+YHExchange.m */,
+			);
+			path = String_Category;
 			sourceTree = "<group>";
 		};
 		EEDC1D961FB1464D00082DDA /* Alert */ = {
@@ -381,6 +407,8 @@
 				EEDC1D991FB1468500082DDA /* YHAlertController.m in Sources */,
 				EEFF525F1FC183BC00B706EA /* NSObject+YHAuthorization.m in Sources */,
 				EEAF8B961FB54A0E00516929 /* UIViewController+YHSystemPhoto.m in Sources */,
+				EEC1B3FD1FC5C98900A4335E /* NSString+YHExchange.m in Sources */,
+				EEC1B3F91FC5BF9600A4335E /* YHNet.m in Sources */,
 				EE817A421FAC696F003AC5B6 /* AppDelegate.m in Sources */,
 				EE817A5F1FAC6D50003AC5B6 /* YHDeviceUtil.m in Sources */,
 				EEFB1BEE1FB946510092DCE9 /* UIViewController+YHCustomNaviBar.m in Sources */,

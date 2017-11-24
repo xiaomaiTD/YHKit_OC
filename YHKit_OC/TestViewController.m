@@ -9,6 +9,7 @@
 #import "TestViewController.h"
 #import "YHKit_OC.h"
 
+#import "YHNet.h"
 
 @interface TestViewController ()
 
@@ -35,6 +36,8 @@
     
 //    self.yh_leftTitle = @"取消";
 
+//    [[YHNet defaultNet] yh_netRequestWithType:YHNetRequestTypeGET withURL:@"" withParameters:nil isShowHUD:YES hudBaseView:nil httpHeaders:nil requestSerializerType:YHNetRequestSerializerTypeKeyValue responseSerializerType:YHNetResponseSerializerTypeJson successBlock:nil errorBlock:nil];
+    
     
     
     switch ([UIDevice currentDevice].orientation) {
