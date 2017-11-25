@@ -39,13 +39,17 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
 @interface YHNet : NSObject
 /** 网络是否可用，需要先调用：yh_startNetWorkMonitoringWithBlock： */
 @property (nonatomic,assign,readonly) BOOL isNetworkReachable;
+/** 所有网络请求的任务 */
 @property (nonatomic,strong,readonly) NSMutableArray<NSURLSessionTask *> * tasks;
 
 
 /** 单列 */
 + (YHNet *)defaultNet;
 
-/** 网络请求，现在暂时只支持GET、POST */
+/**
+ 网络请求，现在暂时只支持GET、POST
+ 注意：如果parameters里面有中文，要对parameters里面的值进行中文转码
+ */
 - (NSURLSessionTask *)yh_netRequestWithType:(YHNetRequestType)requestType
                                     withURLString:(NSString *)URLString
                              withParameters:(nullable id)parameters
@@ -59,10 +63,19 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
 
 
 
+
+
+
+
 /** 取消所有网络请求 */
 - (void)yh_cancelAllNetRequest;
 /** 取消某个网络请求 */
 - (void)yh_cancelRequestWithTask:(NSURLSessionTask *)task;
+
+
+
+
+
 
 
 

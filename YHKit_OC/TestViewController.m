@@ -11,6 +11,9 @@
 
 #import "YHNet.h"
 
+#import "YHPhotoBroswer.h"
+
+
 @interface TestViewController ()
 
 @end
@@ -21,9 +24,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self yh_requestCameraAuthorizationwithResultBlock:^(YHAuthorizationResultTypeForCameraOrMicrophone authorizationStatus) {
-        
-    }];
+//    [self yh_requestCameraAuthorizationwithResultBlock:^(YHAuthorizationResultTypeForCameraOrMicrophone authorizationStatus) {
+//
+//    }];
     
     [self yh_creatNaviBar];
 //    self.yh_leftImage = [UIImage imageNamed:@"navi_test_left"];
@@ -40,46 +43,46 @@
     
     
     
-    switch ([UIDevice currentDevice].orientation) {
-            
-        case UIDeviceOrientationPortrait:
-        case UIDeviceOrientationPortraitUpsideDown:
-        case UIDeviceOrientationFaceUp:
-        case UIDeviceOrientationFaceDown:
-        {
-            
-        }
-            break;
-            
-            
-        case UIDeviceOrientationLandscapeLeft:
-        {
-            
-        }
-            break;
-            
-            
-        case UIDeviceOrientationLandscapeRight:
-        {
-            
-        }
-            break;
-            
-            
-        case UIDeviceOrientationUnknown:
-        {
-            
-        }
-            break;
-            
-        default:
-            break;
-    }
+//    switch ([UIDevice currentDevice].orientation) {
+//
+//        case UIDeviceOrientationPortrait:
+//        case UIDeviceOrientationPortraitUpsideDown:
+//        case UIDeviceOrientationFaceUp:
+//        case UIDeviceOrientationFaceDown:
+//        {
+//
+//        }
+//            break;
+//
+//
+//        case UIDeviceOrientationLandscapeLeft:
+//        {
+//
+//        }
+//            break;
+//
+//
+//        case UIDeviceOrientationLandscapeRight:
+//        {
+//
+//        }
+//            break;
+//
+//
+//        case UIDeviceOrientationUnknown:
+//        {
+//
+//        }
+//            break;
+//
+//        default:
+//            break;
+//    }
     
     
-    [YHNotification yh_checkNotificationAuthorizationWithResultBlock:^(YHNotificationAuthorizationType authorizationType) {
-        NSLog(@"%ld",authorizationType);
-    }];
+//    [YHNotification yh_checkNotificationAuthorizationWithResultBlock:^(YHNotificationAuthorizationType authorizationType) {
+//        NSLog(@"%ld",authorizationType);
+//    }];
     
 }
 - (void)yh_leftButtonClick:(UIButton *)leftButton{
@@ -87,6 +90,11 @@
 }
 - (void)yh_rightButtonClick:(UIButton *)rightButton{
     NSLog(@"右边点击");
+    
+    
+    YHPhotoBroswer *bro = [[YHPhotoBroswer alloc] init];
+    [bro showIn:self];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

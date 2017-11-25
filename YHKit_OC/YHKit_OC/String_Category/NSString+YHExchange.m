@@ -10,8 +10,8 @@
 
 @implementation NSString (YHExchange)
 
-/** 格式化URL，如果URL里面有中文，则进行转码 */
-- (NSString *)yh_formatURL{
+/** 中文格式化。如果有中文，则进行相应的转码 */
+- (NSString *)yh_formatStr{
     NSURL *url = [NSURL URLWithString:self];
     if (url) {
         return self;
@@ -21,7 +21,7 @@
 #else
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];// 9.0之后，该方法被废弃
 #pragma clang diagnostic pop
 #endif
     }

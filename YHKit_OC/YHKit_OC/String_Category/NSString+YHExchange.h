@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (YHExchange)
 
-/** 格式化URL，如果URL里面有中文，则进行转码 */
-- (NSString *)yh_formatURL;
+/** 中文格式化。如果有中文，则进行相应的转码 */
+- (NSString *)yh_formatStr;
 
 
 @end

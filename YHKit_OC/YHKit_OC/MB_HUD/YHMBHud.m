@@ -12,7 +12,7 @@
 //HUD的背景颜色，默认黑色
 #define MB_HUD_COLOR      [UIColor blackColor]
 //HUD消失的时间，默认1.5秒
-static NSTimeInterval const DISMISSTIME = 1.5;
+#define DISMISSTIME       1.5
 
 @implementation YHMBHud
 
@@ -53,7 +53,9 @@ static NSTimeInterval const DISMISSTIME = 1.5;
     hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     hud.bezelView.color = MB_HUD_COLOR;
     hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:DISMISSTIME];
+    yh_MAIN_QUEUE(^{
+        [hud hideAnimated:YES afterDelay:DISMISSTIME];//必须在主线程，源码规定
+    });
     hud.completionBlock = dismissBlock;
 }
 

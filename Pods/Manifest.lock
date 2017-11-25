@@ -14,16 +14,22 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
+  - SDAutoLayout (2.2.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - Masonry
   - MBProgressHUD
+  - SDAutoLayout
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SDAutoLayout: c5509e77ae75735d9a39f7bc83dba6d3f75d49d8
 
-PODFILE CHECKSUM: 993690db0c464d74cd575c61fa80daf88ecd5cc6
+PODFILE CHECKSUM: 29d13b54a22c2c07e76dab6760cf8d1543e8e348
 
 COCOAPODS: 1.2.1.beta.1

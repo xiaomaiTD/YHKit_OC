@@ -11,13 +11,14 @@
 #import "YHDebugMacro.h"
 #import "NSString+YHExchange.h"
 #import "YHMBHud.h"
-
+#import "YHThreadMacro.h"
 
 #if __has_include(<AFNetworking/AFNetworking.h>)
     #import <AFNetworking/AFNetworking.h>
 #elif __has_include("AFNetworking.h")
     #import "AFNetworking.h"
 #endif
+
 
 @interface YHNet ()
 @property (nonatomic,assign) BOOL isNetworkReachable;
@@ -75,13 +76,15 @@
     __block MBProgressHUD *hud = nil;
     if (isShowHUD) {
         hud = [YHMBHud hudWithMessage:nil inView:hudBaseView];
-#endif
     }
+#endif
     
     if (requestType == YHNetRequestTypePOST) {
-        task = [sessionManager POST:URLString.yh_formatURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        task = [sessionManager POST:URLString.yh_formatStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 #if __has_include(<MBProgressHUD/MBProgressHUD.h>) || __has_include("MBProgressHUD.h")
-            [hud hideAnimated:YES];
+            yh_MAIN_QUEUE(^{
+                [hud hideAnimated:YES];
+            });
 #endif
             if ([self.tasks containsObject:task]) {
                 [self.tasks removeObject:task];
@@ -101,15 +104,19 @@
                 [self.tasks removeObject:task];
             }
 #if __has_include(<MBProgressHUD/MBProgressHUD.h>) || __has_include("MBProgressHUD.h")
-            [hud hideAnimated:YES];
+            yh_MAIN_QUEUE(^{
+                [hud hideAnimated:YES];
+            });
             [YHMBHud hudOnlyMessage:error.localizedDescription inView:hudBaseView dismissBlock:nil];
 #endif
             errorBlock ? errorBlock(error) : nil;
         }];
     } else if (requestType == YHNetRequestTypeGET) {
-        task = [sessionManager GET:URLString.yh_formatURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        task = [sessionManager GET:URLString.yh_formatStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 #if __has_include(<MBProgressHUD/MBProgressHUD.h>) || __has_include("MBProgressHUD.h")
-            [hud hideAnimated:YES];
+            yh_MAIN_QUEUE(^{
+                [hud hideAnimated:YES];
+            });
 #endif
             if ([self.tasks containsObject:task]) {
                 [self.tasks removeObject:task];
@@ -129,7 +136,9 @@
                 [self.tasks removeObject:task];
             }
 #if __has_include(<MBProgressHUD/MBProgressHUD.h>) || __has_include("MBProgressHUD.h")
-            [hud hideAnimated:YES];
+            yh_MAIN_QUEUE(^{
+                [hud hideAnimated:YES];
+            });
             [YHMBHud hudOnlyMessage:error.localizedDescription inView:hudBaseView dismissBlock:nil];
 #endif
             errorBlock ? errorBlock(error) : nil;

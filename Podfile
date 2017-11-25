@@ -8,4 +8,6 @@ target 'YHKit_OC' do
   # Pods for YHKit_OC
   pod 'MBProgressHUD'
   pod 'AFNetworking'
+  pod 'SDAutoLayout'
+  pod 'Masonry'
 end

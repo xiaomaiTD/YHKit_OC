@@ -9,7 +9,8 @@
 #ifndef YHOtherMacro_h
 #define YHOtherMacro_h
 
-
+#define YH_WeakSelf(weakName)    __weak typeof(self) weakName = self
+#define YH_Weak(name,weakName)   __weak typeof(name) weakName = name
 
 
 
