@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42D612DCC3D3CB9D7092342A /* libPods-YHKit_OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4538AE72479A1E8F3192A /* libPods-YHKit_OC.a */; };
+		EE321ACB1FD195A200D1B2B8 /* YHPhotoDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE321ACA1FD195A200D1B2B8 /* YHPhotoDetailBottomView.m */; };
+		EE321ACE1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE321ACD1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m */; };
+		EE321AD11FD19C4300D1B2B8 /* YHPhotoDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE321AD01FD19C4300D1B2B8 /* YHPhotoDetailModel.m */; };
 		EE817A421FAC696F003AC5B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A411FAC696F003AC5B6 /* AppDelegate.m */; };
 		EE817A451FAC696F003AC5B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A441FAC696F003AC5B6 /* ViewController.m */; };
 		EE817A481FAC696F003AC5B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE817A461FAC696F003AC5B6 /* Main.storyboard */; };
@@ -45,6 +48,12 @@
 		EE0B206A1FB00D2B001DB83E /* YHSizeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHSizeMacro.h; sourceTree = "<group>"; };
 		EE0B206B1FB00D83001DB83E /* YHDebugMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHDebugMacro.h; sourceTree = "<group>"; };
 		EE0B206C1FB00DBE001DB83E /* YHMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMacroHeader.h; sourceTree = "<group>"; };
+		EE321AC91FD195A200D1B2B8 /* YHPhotoDetailBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPhotoDetailBottomView.h; sourceTree = "<group>"; };
+		EE321ACA1FD195A200D1B2B8 /* YHPhotoDetailBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPhotoDetailBottomView.m; sourceTree = "<group>"; };
+		EE321ACC1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPhotoBroswerDetailCell.h; sourceTree = "<group>"; };
+		EE321ACD1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPhotoBroswerDetailCell.m; sourceTree = "<group>"; };
+		EE321ACF1FD19C4300D1B2B8 /* YHPhotoDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPhotoDetailModel.h; sourceTree = "<group>"; };
+		EE321AD01FD19C4300D1B2B8 /* YHPhotoDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPhotoDetailModel.m; sourceTree = "<group>"; };
 		EE817A3D1FAC696F003AC5B6 /* YHKit_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHKit_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE817A401FAC696F003AC5B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE817A411FAC696F003AC5B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -258,6 +267,8 @@
 			children = (
 				EEC1F2321FC993F80008806E /* YHPhotoListModel.h */,
 				EEC1F2331FC993F80008806E /* YHPhotoListModel.m */,
+				EE321ACF1FD19C4300D1B2B8 /* YHPhotoDetailModel.h */,
+				EE321AD01FD19C4300D1B2B8 /* YHPhotoDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +288,10 @@
 			children = (
 				EEC1F2381FC99AB80008806E /* YHPhotoBroswerListCell.h */,
 				EEC1F2391FC99AB80008806E /* YHPhotoBroswerListCell.m */,
+				EE321AC91FD195A200D1B2B8 /* YHPhotoDetailBottomView.h */,
+				EE321ACA1FD195A200D1B2B8 /* YHPhotoDetailBottomView.m */,
+				EE321ACC1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.h */,
+				EE321ACD1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -475,6 +490,7 @@
 				EEC1F23D1FC9A5CF0008806E /* YHPhotoDetailListVC.m in Sources */,
 				EEDC1DA21FB1BCCF00082DDA /* Test.m in Sources */,
 				EE817A591FAC6BCA003AC5B6 /* DeviceUtil.m in Sources */,
+				EE321AD11FD19C4300D1B2B8 /* YHPhotoDetailModel.m in Sources */,
 				EEAF8BA01FB5969900516929 /* YHMBHud.m in Sources */,
 				EE817A501FAC696F003AC5B6 /* main.m in Sources */,
 				EEFF525B1FC15CFE00B706EA /* YHNotification.m in Sources */,
@@ -483,9 +499,11 @@
 				EEC1F2311FC9904B0008806E /* YHPhotoManager.m in Sources */,
 				EEFF525F1FC183BC00B706EA /* NSObject+YHAuthorization.m in Sources */,
 				EEAF8B961FB54A0E00516929 /* UIViewController+YHSystemPhoto.m in Sources */,
+				EE321ACB1FD195A200D1B2B8 /* YHPhotoDetailBottomView.m in Sources */,
 				EEC1F2281FC975260008806E /* YHPhotoBroswer.m in Sources */,
 				EEC1F23A1FC99AB80008806E /* YHPhotoBroswerListCell.m in Sources */,
 				EEC1B3FD1FC5C98900A4335E /* NSString+YHExchange.m in Sources */,
+				EE321ACE1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m in Sources */,
 				EEC1B3F91FC5BF9600A4335E /* YHNet.m in Sources */,
 				EE817A421FAC696F003AC5B6 /* AppDelegate.m in Sources */,
 				EE817A5F1FAC6D50003AC5B6 /* YHDeviceUtil.m in Sources */,

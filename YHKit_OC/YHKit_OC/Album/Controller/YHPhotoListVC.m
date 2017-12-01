@@ -19,10 +19,11 @@
 #import "YHPhotoBroswerHeader.h"
 #import "YHPhotoManager.h"
 #import "YHPhotoBroswerListCell.h"
+#import "YHPhotoDetailListVC.h"
 
 @interface YHPhotoListVC () <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic,strong) UITableView * tableView;
-@property (nonatomic,strong) NSArray<YHPhotoListModel *> * dataSource;
+@property (nonatomic,strong) UITableView                   * tableView;
+@property (nonatomic,strong) NSArray<YHPhotoListModel *>   * dataSource;
 @end
 
 @implementation YHPhotoListVC
@@ -38,6 +39,12 @@
     
     [self setupUI];
     
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     YH_WeakSelf(weakSelf);
     MBProgressHUD *hud = [YHMBHud hudWithMessage:nil inView:self.view];
     [YHPhotoManager getPhotoAlbumListWithCompletionBlock:^(NSArray<YHPhotoListModel *> *photoAlbumLists) {
@@ -47,7 +54,6 @@
             [weakSelf.tableView reloadData];
         });
     }];
-    
 }
 
 - (void)setupUI{
@@ -66,6 +72,11 @@
 - (void)cancel{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (void)pushToListVcWithModel:(YHPhotoListModel *)model{
+    YHPhotoDetailListVC *listVc = [[YHPhotoDetailListVC alloc] init];
+    listVc.selectedListModel = model;
+    [self.navigationController pushViewController:listVc animated:YES];
+}
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -82,7 +93,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     YHPhotoListModel *model = self.dataSource[indexPath.row];
-    
+    [self pushToListVcWithModel:model];
 }
 #pragma mark - getter
 - (UITableView *)tableView{

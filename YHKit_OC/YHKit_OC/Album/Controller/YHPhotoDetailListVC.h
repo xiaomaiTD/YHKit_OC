@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YHPhotoListModel;
 @interface YHPhotoDetailListVC : UIViewController
-
+@property (nonatomic,strong) YHPhotoListModel * selectedListModel;
 @end
