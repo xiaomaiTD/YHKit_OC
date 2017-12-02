@@ -62,8 +62,8 @@
     PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
     option.resizeMode = resizeMode;
     option.deliveryMode = deliveryMode;
-    option.networkAccessAllowed = NO;
-    option.synchronous = NO;
+    option.networkAccessAllowed = NO;//不与网络进行交互
+    option.synchronous = NO;//不同步
     return [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey];
         if (downloadFinined) {

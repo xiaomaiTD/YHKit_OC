@@ -10,4 +10,6 @@
 
 @interface YHPhotoDetailBottomView : UIView
 
+- (void)setSelectedCount:(NSInteger)count;
+
 @end

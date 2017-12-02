@@ -32,6 +32,12 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
 }
+- (UIViewController *)childViewControllerForStatusBarStyle{
+    return self.topViewController;
+}
+- (UIViewController *)childViewControllerForStatusBarHidden{
+    return self.topViewController;
+}
 
 - (void)showIn:(UIViewController *)showVC{
     [showVC yh_requestPhotoLibraryAuthorizationWithResultBlock:^(YHAuthorizationResultTypeForPhotoLibrary authorizationStatus) {

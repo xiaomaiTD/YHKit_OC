@@ -11,6 +11,7 @@
 		EE321ACB1FD195A200D1B2B8 /* YHPhotoDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE321ACA1FD195A200D1B2B8 /* YHPhotoDetailBottomView.m */; };
 		EE321ACE1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE321ACD1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m */; };
 		EE321AD11FD19C4300D1B2B8 /* YHPhotoDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE321AD01FD19C4300D1B2B8 /* YHPhotoDetailModel.m */; };
+		EE557A581FD2D24000149632 /* YHPhotoBigPreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EE557A571FD2D24000149632 /* YHPhotoBigPreVC.m */; };
 		EE817A421FAC696F003AC5B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A411FAC696F003AC5B6 /* AppDelegate.m */; };
 		EE817A451FAC696F003AC5B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE817A441FAC696F003AC5B6 /* ViewController.m */; };
 		EE817A481FAC696F003AC5B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE817A461FAC696F003AC5B6 /* Main.storyboard */; };
@@ -54,6 +55,8 @@
 		EE321ACD1FD19A5600D1B2B8 /* YHPhotoBroswerDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPhotoBroswerDetailCell.m; sourceTree = "<group>"; };
 		EE321ACF1FD19C4300D1B2B8 /* YHPhotoDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPhotoDetailModel.h; sourceTree = "<group>"; };
 		EE321AD01FD19C4300D1B2B8 /* YHPhotoDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPhotoDetailModel.m; sourceTree = "<group>"; };
+		EE557A561FD2D24000149632 /* YHPhotoBigPreVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPhotoBigPreVC.h; sourceTree = "<group>"; };
+		EE557A571FD2D24000149632 /* YHPhotoBigPreVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPhotoBigPreVC.m; sourceTree = "<group>"; };
 		EE817A3D1FAC696F003AC5B6 /* YHKit_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHKit_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE817A401FAC696F003AC5B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE817A411FAC696F003AC5B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -305,6 +308,8 @@
 				EEC1F22D1FC978340008806E /* YHPhotoListVC.m */,
 				EEC1F23B1FC9A5CF0008806E /* YHPhotoDetailListVC.h */,
 				EEC1F23C1FC9A5CF0008806E /* YHPhotoDetailListVC.m */,
+				EE557A561FD2D24000149632 /* YHPhotoBigPreVC.h */,
+				EE557A571FD2D24000149632 /* YHPhotoBigPreVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -485,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC1F22E1FC978340008806E /* YHPhotoListVC.m in Sources */,
+				EE557A581FD2D24000149632 /* YHPhotoBigPreVC.m in Sources */,
 				EEC1F2341FC993F80008806E /* YHPhotoListModel.m in Sources */,
 				EE817A451FAC696F003AC5B6 /* ViewController.m in Sources */,
 				EEC1F23D1FC9A5CF0008806E /* YHPhotoDetailListVC.m in Sources */,
@@ -645,6 +651,7 @@
 				CODE_SIGN_ENTITLEMENTS = YHKit_OC/YHKit_OC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V9VN23VE8;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = YHKit_OC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -662,6 +669,7 @@
 				CODE_SIGN_ENTITLEMENTS = YHKit_OC/YHKit_OC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V9VN23VE8;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = YHKit_OC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

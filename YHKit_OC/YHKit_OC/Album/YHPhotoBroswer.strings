@@ -8,5 +8,7 @@
 
 "YHPhotoBroswer.cancel"               = "取消";
 "YHPhotoBroswer.albumListTitle"       = "相册列表";
+"YHPhotoBroswer.pre"                  = "预览";
+"YHPhotoBroswer.completion"           = "完成";
 
 

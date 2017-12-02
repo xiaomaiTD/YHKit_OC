@@ -11,10 +11,12 @@
 #import <Masonry/Masonry.h>
 
 #import "YHSizeMacro.h"
+#import "YHOtherMacro.h"
 
 #import "YHPhotoListModel.h"
 #import "YHPhotoDetailBottomView.h"
 #import "YHPhotoBroswerDetailCell.h"
+#import "YHPhotoBigPreVC.h"
 
 
 static CGFloat const kBottomVireHeight                   = 49.f;
@@ -80,8 +82,19 @@ static int const kPerLineCount                           = 4;
         }
         make.bottom.equalTo(self.bottomView.mas_top);
     }];
-    
 }
+
+- (void)changeBottomViewState{
+    __block NSInteger selectCount = 0;
+    [self.dataSource enumerateObjectsUsingBlock:^(YHPhotoDetailModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.isSelected) {
+            selectCount ++;
+        }
+    }];
+    [self.bottomView setSelectedCount:selectCount];
+}
+
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -92,11 +105,18 @@ static int const kPerLineCount                           = 4;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     YHPhotoBroswerDetailCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([YHPhotoBroswerDetailCell class]) forIndexPath:indexPath];
     cell.model = self.dataSource[indexPath.row];
+    
+    YH_WeakSelf(weakSelf);
+    cell.selectBlock = ^{
+        [weakSelf changeBottomViewState];
+    };
+    
     return cell;
 }
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    YHPhotoBigPreVC *vc = [[YHPhotoBigPreVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

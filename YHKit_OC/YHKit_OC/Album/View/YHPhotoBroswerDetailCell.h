@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "YHPhotoDetailModel.h"
+
+typedef void(^SelectBlock)(void);
+
 @interface YHPhotoBroswerDetailCell : UICollectionViewCell
-@property (nonatomic,strong) YHPhotoDetailModel * model;
+@property (nonatomic,strong) YHPhotoDetailModel    * model;
+@property (nonatomic,copy) SelectBlock             selectBlock;
 @end
