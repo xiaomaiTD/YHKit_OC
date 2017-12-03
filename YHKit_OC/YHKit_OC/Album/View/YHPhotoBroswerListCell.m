@@ -60,7 +60,7 @@
     [self.countLabel setSingleLineAutoResizeWithMaxWidth:100.f];
     
     YH_WeakSelf(weakSelf);
-    [YHPhotoManager requestImageWithAsset:_model.headAsset size:CGSizeMake(150, 150) resizeMode:PHImageRequestOptionsResizeModeFast deliveryMode:PHImageRequestOptionsDeliveryModeHighQualityFormat completion:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
+    [YHPhotoManager requestImageWithAsset:_model.headAsset size:CGSizeMake(150, 150) resizeMode:PHImageRequestOptionsResizeModeFast deliveryMode:PHImageRequestOptionsDeliveryModeHighQualityFormat contentMode:PHImageContentModeAspectFill completion:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
         weakSelf.headImageView.image = image;
     }];
 }

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "YHPhotoDetailModel.h"
 
+typedef void(^SingleTapBlock)(void);
+
 @interface YHPhotoBigPreCell : UICollectionViewCell
 @property (nonatomic,strong) YHPhotoDetailModel * model;
+@property (nonatomic,copy) SingleTapBlock singleTapBlock;
 @end

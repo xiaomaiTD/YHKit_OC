@@ -48,7 +48,7 @@
     _model = model;
     self.selectBtn.selected = _model.isSelected;
     YH_WeakSelf(weakSelf);
-    [YHPhotoManager requestImageWithAsset:_model.asset size:CGSizeMake(200, 200) resizeMode:PHImageRequestOptionsResizeModeFast deliveryMode:PHImageRequestOptionsDeliveryModeHighQualityFormat completion:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
+    [YHPhotoManager requestImageWithAsset:_model.asset size:CGSizeMake(200, 200) resizeMode:PHImageRequestOptionsResizeModeFast deliveryMode:PHImageRequestOptionsDeliveryModeHighQualityFormat contentMode:PHImageContentModeAspectFill completion:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
         weakSelf.assetImageView.image = image;
     }];
 }

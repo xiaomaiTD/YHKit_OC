@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
                                      size:(CGSize)size
                                resizeMode:(PHImageRequestOptionsResizeMode)resizeMode
                              deliveryMode:(PHImageRequestOptionsDeliveryMode)deliveryMode
+                              contentMode:(PHImageContentMode)contentMode
                                completion:(void(^)(UIImage * _Nullable image,NSDictionary * _Nullable info))completion;
 @end
 NS_ASSUME_NONNULL_END

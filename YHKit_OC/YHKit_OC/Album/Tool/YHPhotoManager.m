@@ -58,13 +58,13 @@
     completionBlock ? completionBlock(arr) : nil;
 }
 
-+ (PHImageRequestID)requestImageWithAsset:(PHAsset *)asset size:(CGSize)size resizeMode:(PHImageRequestOptionsResizeMode)resizeMode deliveryMode:(PHImageRequestOptionsDeliveryMode)deliveryMode completion:(void (^)(UIImage * _Nullable, NSDictionary * _Nullable))completion{
++ (PHImageRequestID)requestImageWithAsset:(PHAsset *)asset size:(CGSize)size resizeMode:(PHImageRequestOptionsResizeMode)resizeMode deliveryMode:(PHImageRequestOptionsDeliveryMode)deliveryMode contentMode:(PHImageContentMode)contentMode completion:(void (^)(UIImage * _Nullable, NSDictionary * _Nullable))completion{
     PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
     option.resizeMode = resizeMode;
     option.deliveryMode = deliveryMode;
     option.networkAccessAllowed = NO;//不与网络进行交互
     option.synchronous = NO;//不同步
-    return [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    return [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:contentMode options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey];
         if (downloadFinined) {
             completion ? completion(result,info) : nil;

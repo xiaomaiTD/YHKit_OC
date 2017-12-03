@@ -12,12 +12,16 @@
 #import <SDAutoLayout/SDAutoLayout.h>
 
 #import "YHSizeMacro.h"
+#import "YHOtherMacro.h"
+
 
 #import "YHPhotoBigPreNaviView.h"
 #import "YHPhotoBigPreCell.h"
 
 
-@interface YHPhotoBigPreVC () <YHPhotoBigPreNaviViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface YHPhotoBigPreVC () <YHPhotoBigPreNaviViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource> {
+    BOOL _naviHidden;
+}
 @property (nonatomic,strong) YHPhotoBigPreNaviView   * naviView;
 @property (nonatomic,strong) UICollectionView        * collectionView;
 @end
@@ -37,6 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
+    
+    _naviHidden = NO;
     
     [self setupUI];
 }
@@ -77,6 +83,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     YHPhotoBigPreCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([YHPhotoBigPreCell class]) forIndexPath:indexPath];
     cell.model = self.dataSource[indexPath.row];
+    YH_WeakSelf(weakSelf);
+    cell.singleTapBlock = ^{
+        _naviHidden = !_naviHidden;
+        [weakSelf.naviView setNaviHidden:_naviHidden];
+    };
     return cell;
 }
 #pragma mark - UICollectionViewDelegate
