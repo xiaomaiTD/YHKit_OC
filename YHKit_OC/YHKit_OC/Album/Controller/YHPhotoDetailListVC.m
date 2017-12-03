@@ -116,6 +116,7 @@ static int const kPerLineCount                           = 4;
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     YHPhotoBigPreVC *vc = [[YHPhotoBigPreVC alloc] init];
+    vc.dataSource = self.dataSource;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YHPhotoDetailModel.h"
 
 @interface YHPhotoBigPreVC : UIViewController
+@property (nonatomic,strong) NSMutableArray<YHPhotoDetailModel *> * dataSource;
 
 @end
