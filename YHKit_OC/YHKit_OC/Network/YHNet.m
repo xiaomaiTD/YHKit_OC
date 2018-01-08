@@ -150,6 +150,91 @@
     return task;
 }
 
+
+
+/** 上传单张图片---POST */
+- (NSURLSessionTask *)yh_uploadImageWithUrlString:(NSString *)urlString parameters:(id)parameters image:(UIImage *)image imageScale:(CGFloat)imageScale name:(NSString *)name fileName:(NSString *)fileName isShowHud:(BOOL)isShowHud hudBaseView:(UIView *)hudBaseView httpHeaders:(NSDictionary *)httpHeaders successBlock:(void (^)(id _Nonnull))successBlock errorBlock:(void (^)(NSError * _Nonnull))errorBlock{
+    
+    //当url为空时，进行处理
+    if (urlString == nil || urlString.length == 0) {
+        YHLog(@"url为空");
+        return nil;
+    }
+    AFHTTPSessionManager *sessionManager = [self sessionManagerWithRequestSerializerType:YHNetRequestSerializerTypeKeyValue responseSerializerType:YHNetResponseSerializerTypeJson];
+    
+    //当sessionManager不存在时，进行处理
+    if (!sessionManager) {
+        YHLog(@"sessionManager为空");
+        return nil;
+    }
+    
+    //设置请求头
+    if (httpHeaders.allKeys.count > 0) {
+        [httpHeaders enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
+            [sessionManager.requestSerializer setValue:obj forHTTPHeaderField:key];
+        }];
+    }
+    
+    //打印信息
+    YHLog(@"\n---------------------------------------\nURL:%@\nparameters:%@\n---------------------------------------",urlString,parameters);
+    
+    NSURLSessionTask *task = nil;
+#if __has_include(<MBProgressHUD/MBProgressHUD.h>) || __has_include("MBProgressHUD.h")
+    __block MBProgressHUD *hud = nil;
+    if (isShowHud) {
+        hud = [YHMBHud hudWithMessage:nil inView:hudBaseView];
+    }
+#endif
+    task = [sessionManager POST:urlString.yh_formatStr parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        NSData *imageData = UIImageJPEGRepresentation(image, imageScale);
+        
+        [formData appendPartWithFileData:imageData name:name fileName:fileName mimeType:@"image/png"];
+        
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+#if __has_include(<MBProgressHUD/MBProgressHUD.h>) || __has_include("MBProgressHUD.h")
+        yh_MAIN_QUEUE(^{
+            [hud hideAnimated:YES];
+        });
+#endif
+        if ([self.tasks containsObject:task]) {
+            [self.tasks removeObject:task];
+        }
+        YHLog(@"%@",responseObject);
+        successBlock ? successBlock(responseObject) : nil;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        YHLog(@"%@",error);
+        if ([self.tasks containsObject:task]) {
+            [self.tasks removeObject:task];
+        }
+#if __has_include(<MBProgressHUD/MBProgressHUD.h>) || __has_include("MBProgressHUD.h")
+        yh_MAIN_QUEUE(^{
+            [hud hideAnimated:YES];
+        });
+        [YHMBHud hudOnlyMessage:error.localizedDescription inView:hudBaseView dismissBlock:nil];
+#endif
+        errorBlock ? errorBlock(error) : nil;
+    }];
+    if (task) {
+        [self.tasks addObject:task];
+    }
+    return task;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /** 初始化sessionManager，里面采用了单例，目的是为了降低了内存 */
 - (AFHTTPSessionManager *)sessionManagerWithRequestSerializerType:(YHNetRequestSerializerType)requestSerializerType
                                            responseSerializerType:(YHNetResponseSerializerType)responseSerializerType{

@@ -16,6 +16,30 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)yh_formatStr;
 
 
+/** 解码 */
+- (NSString *)yh_deFormatStr;
+
+
+
+/** 字符串倒叙输出 */
+- (NSString *)yh_reverseStr;
+
+
+/** RSA加密 */
++ (NSString *)yh_rsaEncryptString:(NSString *)str publicKeyWithContentsOfFile:(NSString *)path;
+/** RSA加密 */
++ (NSString *)yh_rsaEncryptString:(NSString *)str publicKey:(NSString *)pubKey;
+/** RSA解密 */
++ (NSString *)yh_rsaDecryptString:(NSString *)str privateKeyWithContentsOfFile:(NSString *)path password:(NSString *)password;
+/** RSA解密 */
++ (NSString *)yh_rsaDecryptString:(NSString *)str privateKey:(NSString *)privKey;
+
+
+
+
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

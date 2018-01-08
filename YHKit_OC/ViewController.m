@@ -25,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *hardwareStr = [YHDeviceUtil hardwareString];
-    NSLog(@"%@",hardwareStr);
+//    NSString *hardwareStr = [YHDeviceUtil hardwareString];
+//    NSLog(@"%@",hardwareStr);
     
 //    [YHAuthorization asdsas:^(YHAuthorizationResultType authorizationResultType) {
 //        [self.navigationController pushViewController:self animated:YES];

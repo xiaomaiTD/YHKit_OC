@@ -19,6 +19,8 @@
 #endif
 #endif
 
+#import <LocalAuthentication/LocalAuthentication.h>
+
 @implementation NSObject (YHAuthorization)
 /** 请求相册权限 */
 - (void)yh_requestPhotoLibraryAuthorizationWithResultBlock:(void (^)(YHAuthorizationResultTypeForPhotoLibrary))resultBlock{
@@ -27,17 +29,23 @@
             
         case PHAuthorizationStatusAuthorized:
         {
-            resultBlock ? resultBlock(YHPhotoLibraryAuthorizationAuthorized) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultBlock ? resultBlock(YHPhotoLibraryAuthorizationAuthorized) : nil;
+            });
         }
             break;
         case PHAuthorizationStatusDenied:
         {
-            resultBlock ? resultBlock(YHPhotoLibraryAuthorizationDenied) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultBlock ? resultBlock(YHPhotoLibraryAuthorizationDenied) : nil;
+            });
         }
             break;
         case PHAuthorizationStatusRestricted:
         {
-            resultBlock ? resultBlock(YHPhotoLibraryAuthorizationRestricted) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultBlock ? resultBlock(YHPhotoLibraryAuthorizationRestricted) : nil;
+            });
         }
             break;
         case PHAuthorizationStatusNotDetermined:
@@ -47,23 +55,31 @@
                 switch (status) {
                     case PHAuthorizationStatusAuthorized:
                     {
-                        resultBlock ? resultBlock(YHPhotoLibraryAuthorizationAuthorized) : nil;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            resultBlock ? resultBlock(YHPhotoLibraryAuthorizationAuthorized) : nil;
+                        });
                     }
                         break;
                     case PHAuthorizationStatusRestricted:
                     {
-                        resultBlock ? resultBlock(YHPhotoLibraryAuthorizationRestricted) : nil;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            resultBlock ? resultBlock(YHPhotoLibraryAuthorizationRestricted) : nil;
+                        });
                     }
                         break;
                     case PHAuthorizationStatusDenied:
                     {
-                        resultBlock ? resultBlock(YHPhotoLibraryAuthorizationDenied) : nil;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            resultBlock ? resultBlock(YHPhotoLibraryAuthorizationDenied) : nil;
+                        });
                     }
                         break;
                     case PHAuthorizationStatusNotDetermined:
                     {
-                        //按照正常流程是不会走这个Block的
-                        resultBlock ? resultBlock(YHPhotoLibraryAuthorizationNotDetermined) : nil;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            //按照正常流程是不会走这个Block的
+                            resultBlock ? resultBlock(YHPhotoLibraryAuthorizationNotDetermined) : nil;
+                        });
                     }
                         break;
                     default:
@@ -90,17 +106,23 @@
     switch (status) {
         case AVAuthorizationStatusAuthorized:
         {
-            resultType ? resultType(YHCameraOrMicrophoneAuthorizationAuthorized) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHCameraOrMicrophoneAuthorizationAuthorized) : nil;
+            });
         }
             break;
         case AVAuthorizationStatusDenied:
         {
-            resultType ? resultType(YHCameraOrMicrophoneAuthorizationDenied) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHCameraOrMicrophoneAuthorizationDenied) : nil;
+            });
         }
             break;
         case AVAuthorizationStatusRestricted:
         {
-            resultType ? resultType(YHCameraOrMicrophoneAuthorizationRestricted) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHCameraOrMicrophoneAuthorizationRestricted) : nil;
+            });
         }
             break;
         case AVAuthorizationStatusNotDetermined:
@@ -108,9 +130,13 @@
             //当是NotDetermined时，重新请求权限
             [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
                 if (granted) {
-                    resultType ? resultType(YHCameraOrMicrophoneAuthorizationAuthorized) : nil;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        resultType ? resultType(YHCameraOrMicrophoneAuthorizationAuthorized) : nil;
+                    });
                 } else {
-                    resultType ? resultType(YHCameraOrMicrophoneAuthorizationDenied) : nil;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        resultType ? resultType(YHCameraOrMicrophoneAuthorizationDenied) : nil;
+                    });
                 }
             }];
         }
@@ -129,17 +155,23 @@
     switch (status) {
         case CNAuthorizationStatusAuthorized:
         {
-            resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+            });
         }
             break;
         case CNAuthorizationStatusDenied:
         {
-            resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+            });
         }
             break;
         case CNAuthorizationStatusRestricted:
         {
-            resultType ? resultType(YHAddressBookAuthorizationRestricted) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHAddressBookAuthorizationRestricted) : nil;
+            });
         }
             break;
         case CNAuthorizationStatusNotDetermined:
@@ -149,12 +181,18 @@
             [contactStore requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
                 if (error) {
                     NSLog(@"使用Contacts框架获取通讯录权限发生错误:%@",error);
-                    resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+                    });
                 } else {
                     if (granted) {
-                        resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+                        });
                     } else {
-                        resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+                        });
                     }
                 }
             }];
@@ -168,17 +206,23 @@
     switch (status) {
         case kABAuthorizationStatusAuthorized:
         {
-            resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+            });
         }
             break;
         case kABAuthorizationStatusDenied:
         {
-            resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+            });
         }
             break;
         case kABAuthorizationStatusRestricted:
         {
-            resultType ? resultType(YHAddressBookAuthorizationRestricted) : nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                resultType ? resultType(YHAddressBookAuthorizationRestricted) : nil;
+            });
         }
             break;
         case kABAuthorizationStatusNotDetermined:
@@ -187,9 +231,13 @@
             ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
             ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
                 if (granted) {
-                    resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        resultType ? resultType(YHAddressBookAuthorizationAuthorized) : nil;
+                    });
                 } else {
-                    resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        resultType ? resultType(YHAddressBookAuthorizationDenied) : nil;
+                    });
                 }
             });
         }
@@ -198,5 +246,14 @@
             break;
     }
 #endif
+}
+
+/** Touch ID 是否可用 */
+- (BOOL)yh_touchIDEnabled{
+    NSError *error;
+    LAContext *context = [[LAContext alloc] init];
+    BOOL res = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&error];
+    NSLog(@"%@",error);
+    return res;
 }
 @end

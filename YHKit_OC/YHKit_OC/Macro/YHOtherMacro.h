@@ -15,5 +15,8 @@
 
 
 
+#define YH_AppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+
 
 #endif /* YHOtherMacro_h */

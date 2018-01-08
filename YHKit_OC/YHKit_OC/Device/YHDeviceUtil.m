@@ -9,28 +9,49 @@
 #import "YHDeviceUtil.h"
 
 #include <sys/utsname.h>
-
+#import <SystemConfiguration/CaptiveNetwork.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
 
 @implementation YHDeviceUtil
-
-/** 获取设备型号，比如iPhone9,2 */
-+ (NSString *)hardwareString{
-    //需要 #include <sys/utsname.h>
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    /*
-    char *s1 = systemInfo.sysname;// Darwin
-    char *s2 = systemInfo.nodename;// yinhedeiPhone
-    char *s3 = systemInfo.release;// 17.0.0
-    char *s4 = systemInfo.version;// Darwin Kernel Version 17.0.0: Fri Sep  1 14:59:15 PDT 2017; root:xnu-4570.2.5~167/RELEASE_ARM64_T8010
-    char *s5 = systemInfo.machine;// iPhone9,2
-    */
-    NSString *hardwareString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    return hardwareString;
++ (instancetype)sharedDevice{
+    static YHDeviceUtil *device = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        device = [[YHDeviceUtil alloc] init];
+        
+        
+        CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+        CTCarrier *carrier = info.subscriberCellularProvider;
+        //供应商名字，比如中国联通、中国移动
+        NSString *carrierName = carrier.carrierName;
+        //国家编号，共3位，中国地区为460
+        NSString *countryCode = carrier.mobileCountryCode;
+        //供应商网络编号，二到三个十进制数组成，中国移动MNC为00、02、07，中国联通的MNC为01、06、09，中国电信的MNC为03、05、11
+        NSString *netCode = carrier.mobileNetworkCode;
+        //isoCountryCode
+        NSString *isoCountryCode = carrier.isoCountryCode;
+        //是否允许VOIP
+        BOOL isAllowVOIP = carrier.allowsVOIP;
+        //本机号码(机主设置的本机号码，有可能是假号码，不能访问sim卡手机号码),CTSettingCopyMyPhoneNumber()是私有API
+        NSString *mayRealPhone = [[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"];
+        
+        device.yh_sim_carrierName = carrierName;
+        device.yh_sim_countryCode = countryCode;
+        device.yh_sim_netCode = netCode;
+        device.yh_sim_isoCountryCode = isoCountryCode;
+        device.yh_sim_isAllowVOIP = isAllowVOIP;
+        device.yh_sim_mayRealPhone = mayRealPhone;
+        
+        struct utsname systemInfo;
+        uname(&systemInfo);
+        NSString *hardwareString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+        device.yh_hardwareString = hardwareString;
+        
+        
+    });
+    return device;
 }
-
-
-
 
 
 

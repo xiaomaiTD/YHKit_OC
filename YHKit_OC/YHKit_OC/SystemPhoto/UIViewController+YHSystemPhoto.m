@@ -13,6 +13,7 @@
 #import "YHAlertController.h"
 #import "YHRuntimeMacro.h"
 
+#import "NSObject+YHAuthorization.h"
 
 typedef void(^ImageBlock)(UIImage * _Nullable image);
 
@@ -77,9 +78,34 @@ typedef void(^ImageBlock)(UIImage * _Nullable image);
 - (ImageBlock)imageBlock{
     return YH_RUNTIME_GET;
 }
-
-
-
+//
+- (void)setYh_permissionTitle:(NSString *)yh_permissionTitle{
+    YH_RUNTIME_COPY_SET(@selector(yh_permissionTitle), yh_permissionTitle);
+}
+- (NSString *)yh_permissionTitle{
+    return YH_RUNTIME_GET;
+}
+//
+- (void)setYh_cameraPermissionMessage:(NSString *)yh_cameraPermissionMessage{
+    YH_RUNTIME_COPY_SET(@selector(yh_cameraPermissionMessage), yh_cameraPermissionMessage);
+}
+- (NSString *)yh_cameraPermissionMessage{
+    return YH_RUNTIME_GET;
+}
+//
+- (void)setYh_alblumPermissionMessage:(NSString *)yh_alblumPermissionMessage{
+    YH_RUNTIME_COPY_SET(@selector(yh_alblumPermissionMessage), yh_alblumPermissionMessage);
+}
+- (NSString *)yh_alblumPermissionMessage{
+    return YH_RUNTIME_GET;
+}
+//
+- (void)setYh_permissionOK:(NSString *)yh_permissionOK{
+    YH_RUNTIME_COPY_SET(@selector(yh_permissionOK), yh_permissionOK);
+}
+- (NSString *)yh_permissionOK{
+    return YH_RUNTIME_GET;
+}
 
 #pragma mark - public methods
 - (void)alblumBlock:(void(^)(void))block{
@@ -112,12 +138,28 @@ typedef void(^ImageBlock)(UIImage * _Nullable image);
         .addActionCancelTitle(self.yh_systemmPhotoCancelTitle ? self.yh_systemmPhotoCancelTitle : @"取消");
     } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, YHAlertController * _Nonnull alert) {
         if (buttonIndex == 0) {
-            [self cameraBlock:^{
-                weakSelf.yh_isShowSystemPhoto = YES;
+            [self yh_requestCameraAuthorizationwithResultBlock:^(YHAuthorizationResultTypeForCameraOrMicrophone authorizationStatus) {
+                if (authorizationStatus == YHCameraOrMicrophoneAuthorizationAuthorized) {
+                    [self cameraBlock:^{
+                        weakSelf.yh_isShowSystemPhoto = YES;
+                    }];
+                } else {
+                    [self yh_showAlertWithTitle:self.yh_permissionTitle message:self.yh_cameraPermissionMessage alertMaker:^(YHAlertController * _Nonnull alert) {
+                        alert.addActionDefaultTitle(self.yh_permissionOK);
+                    } actionsBlock:nil];
+                }
             }];
         } else if (buttonIndex == 1) {
-            [self alblumBlock:^{
-                weakSelf.yh_isShowSystemPhoto = YES;
+            [self yh_requestPhotoLibraryAuthorizationWithResultBlock:^(YHAuthorizationResultTypeForPhotoLibrary authorizationStatus) {
+                if (authorizationStatus == YHPhotoLibraryAuthorizationAuthorized) {
+                    [self alblumBlock:^{
+                        weakSelf.yh_isShowSystemPhoto = YES;
+                    }];
+                } else {
+                    [self yh_showAlertWithTitle:self.yh_permissionTitle message:self.yh_alblumPermissionMessage alertMaker:^(YHAlertController * _Nonnull alert) {
+                        alert.addActionDefaultTitle(self.yh_permissionOK);
+                    } actionsBlock:nil];
+                }
             }];
         }
     }];

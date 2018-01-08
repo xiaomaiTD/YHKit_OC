@@ -14,6 +14,12 @@
 #import "YHColorMacro.h"
 #import "YHSizeMacro.h"
 
+#if __has_include(<FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>)
+    #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
+#elif __has_include("UINavigationController+FDFullscreenPopGesture.h")
+    #import "UINavigationController+FDFullscreenPopGesture.h"
+#endif
+
 
 
 #define NaviHeight               YH_STATUSBARFRAME.size.height + YH_NAVIFRAME.size.height
@@ -40,6 +46,12 @@ static CGFloat const BottomLineHeight = 0.5f;
 #pragma mark - methods
 - (void)yh_creatNaviBar{
     
+#if __has_include(<FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>) || __has_include("UINavigationController+FDFullscreenPopGesture.h")
+    self.fd_interactivePopDisabled = NO;
+    self.fd_prefersNavigationBarHidden = YES;
+#endif
+    
+    
     self.yh_naviBgView = [[UIView alloc] init];
     self.yh_naviBgView.backgroundColor = YH_RGB(249, 249, 250);
     [self.view addSubview:self.yh_naviBgView];
@@ -62,6 +74,9 @@ static CGFloat const BottomLineHeight = 0.5f;
     self.yh_rightButton.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.yh_rightButton setImage:self.yh_rightImage forState:UIControlStateNormal];
     [self.yh_rightButton addTarget:self action:@selector(yh_rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.yh_rightButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    self.yh_rightButton.titleLabel.numberOfLines = 0;
+    self.yh_rightButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.yh_naviBgView addSubview:self.yh_rightButton];
     
     
@@ -155,6 +170,28 @@ static CGFloat const BottomLineHeight = 0.5f;
 - (void)setYh_rightTitle:(NSString *)yh_rightTitle{
     YH_RUNTIME_COPY_SET(@selector(yh_rightTitle), yh_rightTitle);
     [self.yh_rightButton setTitle:yh_rightTitle forState:UIControlStateNormal];
+    
+    
+//    //当导航栏右边是标题的时候，可以用这个方法来自适应尺寸，然后做些微调
+    [self.yh_rightButton sizeToFit];
+    
+    CGRect frame = self.yh_rightButton.frame;
+    frame.origin.y = NaviHeight_top;
+    
+    if (frame.size.width <= ItemWidth) {
+        frame.origin.x = frame.origin.x+(ItemWidth-frame.size.width)-5;
+    } else {
+        if (frame.size.width > 110.f) {
+            frame.size.width = 110.f;
+            frame.origin.x = YH_SCREENWIDTH-5-110.f;
+//            frame.origin.x = frame.origin.x-(frame.size.width-100.f)-5;
+        } else {
+            frame.origin.x = frame.origin.x-(frame.size.width-ItemWidth)-5;
+        }
+    }
+    frame.size.height = NaviHeight_bottom;
+    self.yh_rightButton.frame = frame;
+    
 }
 - (NSString *)yh_rightTitle{
     return YH_RUNTIME_GET;

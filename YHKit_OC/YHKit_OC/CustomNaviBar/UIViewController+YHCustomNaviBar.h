@@ -34,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 导航栏左边按钮标题的字体大小，默认系统字体，大小17 */
 @property (nonatomic,assign) CGFloat         yh_leftTitleSize;
 
+@property (nonatomic,strong,readonly) UIButton          * yh_leftButton;
+@property (nonatomic,strong,readonly) UIButton          * yh_rightButton;
+
 
 /** 导航栏右边按钮图片 */
 @property (nonatomic,strong) UIImage         * yh_rightImage;

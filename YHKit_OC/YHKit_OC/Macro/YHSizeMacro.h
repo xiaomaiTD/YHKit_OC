@@ -14,6 +14,10 @@
 /** 屏幕高度 */
 #define YH_SCREENHEIGHT         [UIScreen mainScreen].bounds.size.height
 
+//以7plus为基准，长宽按比例缩放
+#define YH_HEIGHT(h)            (h/736.f*YH_SCREENHEIGHT)
+#define YH_WIDTH(w)            (w/414.f*YH_SCREENWIDTH)
+
 
 /** 状态栏Frame
  1、当状态栏是隐藏的时候，是CGRectZero

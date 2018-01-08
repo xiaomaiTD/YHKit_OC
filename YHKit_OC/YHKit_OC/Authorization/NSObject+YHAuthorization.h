@@ -53,6 +53,10 @@ typedef NS_ENUM(NSUInteger, YHAuthorizationResultTypeForAddressBook) {
 
 /** 通讯录权限 */
 - (void)yh_requestAddressBookAuthorizationwithResultBlock:(void(^)(YHAuthorizationResultTypeForAddressBook authorizationStatus))resultType NS_AVAILABLE_IOS(8_0);
+
+/** Touch ID 是否可用 */
+- (BOOL)yh_touchIDEnabled;
+
 @end
 NS_ASSUME_NONNULL_END
 

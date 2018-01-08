@@ -62,8 +62,18 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
                                  errorBlock:(nullable void(^)(NSError *error))errorBlock;
 
 
-
-
+/** 上传单张图片---POST */
+- (NSURLSessionTask *)yh_uploadImageWithUrlString:(NSString *)urlString
+                                       parameters:(nullable id)parameters
+                                            image:(UIImage *)image
+                                       imageScale:(CGFloat)imageScale
+                                             name:(NSString *)name
+                                         fileName:(NSString *)fileName
+                                        isShowHud:(BOOL)isShowHud
+                                      hudBaseView:(nullable UIView *)hudBaseView
+                                      httpHeaders:(nullable NSDictionary *)httpHeaders
+                                     successBlock:(nullable void(^)(id responseObject))successBlock
+                                       errorBlock:(nullable void(^)(NSError *error))errorBlock;
 
 
 
@@ -76,12 +86,8 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
 
 
 
-
-
-
 /** 开启网络监测，一旦网络转台发生变化，都会走block回调 */
 - (void)yh_startNetWorkMonitoringWithBlock:(nullable void(^)(YHNetworkStatus status))block;
-
 
 
 

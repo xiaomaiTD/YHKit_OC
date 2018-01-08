@@ -18,5 +18,9 @@
 #import "UIViewController+YHSystemPhoto.h"
 #import "UIViewController+YHCustomNaviBar.h"
 #import "YHNet.h"
-
+#import "YHDrawerVC.h"
+#import "UIImage+YHColorToImage.h"
+#import "NSString+YHExchange.h"
+#import "NSString+YHValid.h"
+#import "NSData+YHData.h"
 #endif /* YHKit_OC_h */
