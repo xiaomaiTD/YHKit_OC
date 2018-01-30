@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "YHKit_OC"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "个人开发库、各种工具、类库、总结等"
 
   
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/liujunliuhong/YHKit_OC.git", :tag => "#{s.version}" }
 
 
-  s.source_files  = "YHKit_OC/YHKit_OC"
+  s.source_files  = "YHKit_OC/YHKit_OC/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
