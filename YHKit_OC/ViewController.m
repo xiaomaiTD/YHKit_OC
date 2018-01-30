@@ -9,9 +9,14 @@
 #import "ViewController.h"
 
 
+#import "YHDeviceUtil.h"
 #import "YHKit_OC.h"
-#import "Test.h"
 
+#define YHRSA_PUBLIC    @"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5EzIpCQHrC2h/qbFIGHQon1BQg7eklHbfzs2FWkSgc/7ExMt9Xp6iLf/OMhNUkr2HIHFzlZg7d6s09sYqmgvp4ZntbxaooqEf/vswaVUsyzirYjcXjQuW9VKjkbGmqzanSFt1jqqYe4rU6NMXFWP6GB3FYe1CkdiJO4r1wa8D2sDOi0vtt0eI0fYH2cXbTv01HdgjN6CIEhK36kRBnTAgpd8+tza7v3T1mlBYJovPNbBqwttly/eqHe/79Uxy3g/kEHAl8mqJGZJM0ziW8ksB5AZ6Ayyh29JRaJjMIh9VR+4FaG5Ww+91t363X6bmN+lUYelApXzXJqZLdOeJ/dbBwIDAQAB"
+
+
+
+#define YHRSA_PRIVATE   @"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDkTMikJAesLaH+psUgYdCifUFCDt6SUdt/OzYVaRKBz/sTEy31enqIt/84yE1SSvYcgcXOVmDt3qzT2xiqaC+nhme1vFqiioR/++zBpVSzLOKtiNxeNC5b1UqORsaarNqdIW3WOqph7itTo0xcVY/oYHcVh7UKR2Ik7ivXBrwPawM6LS+23R4jR9gfZxdtO/TUd2CM3oIgSErfqREGdMCCl3z63Nru/dPWaUFgmi881sGrC22XL96od7/v1THLeD+QQcCXyaokZkkzTOJbySwHkBnoDLKHb0lFomMwiH1VH7gVoblbD73W3frdfpuY36VRh6UClfNcmpkt054n91sHAgMBAAECggEBALMj8RijUQXw9LleYTYsqsql4GwWQN2tr7+hVantPeFwsoHgPeLujXH0dyc2PT4CpiXuSqnDK+HbJeBDfpJQmHwqwfxf5PrAGIJYywmUUucZpHEpAEpHRc03i34i2TqLwiskDQzaEdIwUf0aGRQm63obH7ZcO1nqc3+pB+t9VFn/UhIgLe/8mT/fb+gXXnJfZu6d8BY51u+Oy0EqzH4mWg1tI6SuEEQMYgjw7APFp6DmsEZJchyPrzj0eRaqEz/9pdFKIv7nfReTc+ty8UWkjAQ0pVED+hdopV250XB6qWhzkK/YkjBLPC7jdaeOdSJUED28lP9z35SlhuGCatTReOECgYEA7BKpDi1B5RIUQtFjmEQF237z4jpc+BmQuAxyeogGFTZbtkWja/sxMv1ZPXOENZlP+svMhBl5hkfj5l9MbMQ8ql5TpuJe8QXiEBT6s38KwhZnbfvAew7kOkNqfCxK9HsOfrUNxocY+fw4lq57DqsbcDEy1136S7UrM26WwioU+1ECgYEA95IoACS41OUhuQpBSt8/Qx2GfJ0toIpR8jI14zykZujQf069vgOr3KS82yMLnRpHLOsx09xv4Ya/D0w6hh/Vy8pZud1ZVuugnal+v6Si4vJONseOxg6uAtrvYVo7YnR6ld5mEerC+aq/ktVkZDf/zYM7hpSCaSGWemLaK9wNKtcCgYEAgKZusMYjKfXfSsaXcwxm8MZPnFLYBXDROCu4W2QzhG3aLwvmUltS5YnBj0abnyYMuw1DSB4l5vLYlNwMZx3OPb4n8kNdIBZnqwHz2cv7DehttzdCHw3vfHzu0/rDYlaJgK2kczN+fgVgxWUStNy0mECHh2y0kXuKrn2u9ONACfECgYBkTGNGQ5paLgYuiDgRlEZ182VD4Q3WJ5OxcqQgTrYwNwwZN5Zpf+VFu7wDb7xJxpalXRfPxFPTY5rOIMzo/8bHDFCzmziRnV5x4XRHQfT3ysDjMo/mL5ZR887dewfqCFSNmQ9zHNAnBAUfALLuYz2QTiV0jYAUBZaIOLo44Kq4+wKBgB2cmDOgF3mG2sxCUmovyW44+OnstnSLW4QaJE/HE9V5nMeCGyfwn+OaQ1fphG/tK/2qyxp27JlFqLHkY1IW6u5FaLLlnZaA/O4M9L2cjmadgpYpVcCSU4Y8yolDcFLT+MmzSc7r3Pqmh3B+tWYIU341PpJ/7CWUhoqR0LMDjRY5"
 
 
 
@@ -24,60 +29,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *str1 = [YHDeviceUtil sharedUtil].yh_sim_carrierName;
+    NSString *str2 = [YHDeviceUtil sharedUtil].yh_sim_countryCode;
+    NSString *str3 = [YHDeviceUtil sharedUtil].yh_sim_netCode;
+    NSString *str4 = [YHDeviceUtil sharedUtil].yh_sim_isoCountryCode;
+    NSInteger str5 = [YHDeviceUtil sharedUtil].yh_sim_isAllowVOIP;
+    NSString *str7 = [YHDeviceUtil sharedUtil].yh_hardwareString;
+    NSString *str8 = [YHDeviceUtil sharedUtil].yh_systemVersion;
+    NSString *str9 = [YHDeviceUtil sharedUtil].yh_deveiceName;
+    NSString *str10 = [YHDeviceUtil sharedUtil].yh_appleName;
+    NSString *str11 = [YHDeviceUtil sharedUtil].yh_ipAdress;
+    NSString *str12 = [YHDeviceUtil sharedUtil].yh_ipAdressForWiFi;
+    NSString *str13 = [YHDeviceUtil sharedUtil].yh_ipAdressForCellular;
+    NSInteger str14 = [YHDeviceUtil sharedUtil].yh_isCanMakePhone;
     
-//    NSString *hardwareStr = [YHDeviceUtil hardwareString];
-//    NSLog(@"%@",hardwareStr);
+    NSLog(@"str1:%@",str1);
+    NSLog(@"str2:%@",str2);
+    NSLog(@"str3:%@",str3);
+    NSLog(@"str4:%@",str4);
+    NSLog(@"str5:%ld",str5);
+    NSLog(@"str7:%@",str7);
+    NSLog(@"str8:%@",str8);
+    NSLog(@"str9:%@",str9);
+    NSLog(@"str10:%@",str10);
+    NSLog(@"str11:%@",str11);
+    NSLog(@"str12:%@",str12);
+    NSLog(@"str13:%@",str13);
+    NSLog(@"str14:%ld",str14);
     
-//    [YHAuthorization asdsas:^(YHAuthorizationResultType authorizationResultType) {
-//        [self.navigationController pushViewController:self animated:YES];
-//    }];
+    NSLog(@"😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄");
+    NSString *str = @"你好";
+    
+    NSString *encryptStr = [NSString yh_rsaEncryptString:str publicKey:YHRSA_PUBLIC];
+    YHLog(@"加密后:%@",encryptStr);
+    
+    
+    
+    //    NSString *decryptStr = [NSString yh_rsa_decryptString:encryptStr privateKey:[NSString stringWithBase64EncodedString:YHRSA_PRIVATE]];
+    NSString *decryptStr = [NSString yh_rsaDecryptString:encryptStr privateKey:YHRSA_PRIVATE];
+    YHLog(@"解密:%@",decryptStr);
+    YHLog(@"😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄");
+    
+    
     
 }
 - (IBAction)alertTestAction:(id)sender {
-    [self yh_systemPhotoAlertWithImageBlock:^(UIImage * _Nonnull image) {
-        NSLog(@"%@",image);
-    }];
-    
-//    [YHMBHud show];
-    
-//    [YHMBHud hudOnlyMessage:@"请稍后" inView:nil dismissBlock:nil];
-    
-    
-//    [self yh_showActionSheetAlertWithTitle:nil message:nil alertMaker:^(YHAlertController * _Nonnull alert) {
-//        alert.addActionDefaultTitle(@"111111")
-//        .addActionDefaultTitle(@"2222222")
-//        .addActionDestructiveTitle(@"333333")
-//        .addActionCancelTitle(@"44444444");
-//    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, YHAlertController * _Nonnull alert) {
-//        if (buttonIndex == 0) {
-//            NSLog(@"1111111");
-//        } else if (buttonIndex == 1) {
-//            NSLog(@"22222222");
-//        } else if (buttonIndex == 2) {
-//            NSLog(@"333333");
-//        } else if (buttonIndex == 3) {
-//            NSLog(@"444444");
-//        }
-//    }];
-    
-    
-    
-//    [self yh_showAlertWithTitle:@"提示" message:@"请点击选项" alertMaker:^(YHAlertController * _Nonnull alert) {
-//        alert.addActionDefaultTitle(@"111111")
-//        .addActionDefaultTitle(@"2222222")
-//        .addActionDestructiveTitle(@"333333")
-//        .addActionCancelTitle(@"44444444");
-//    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, YHAlertController * _Nonnull alert) {
-//        if (buttonIndex == 0) {
-//            NSLog(@"1111111");
-//        } else if (buttonIndex == 1) {
-//            NSLog(@"22222222");
-//        } else if (buttonIndex == 2) {
-//            NSLog(@"333333");
-//        } else if (buttonIndex == 3) {
-//            NSLog(@"444444");
-//        }
-//    }];
+  
 }
 - (IBAction)photoLibraryAction:(id)sender {
 

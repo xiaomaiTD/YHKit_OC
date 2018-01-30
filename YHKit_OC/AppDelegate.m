@@ -11,6 +11,7 @@
 
 #import "YHKit_OC.h"
 
+#import "ViewController.h"
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
     #import <UserNotifications/UserNotifications.h>
@@ -29,11 +30,13 @@
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
     
-    TestViewController *t = [[TestViewController alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:t];
-    [navi setNavigationBarHidden:YES];
-    self.window.rootViewController = navi;
+//    TestViewController *t = [[TestViewController alloc] init];
+//    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:t];
+//    [navi setNavigationBarHidden:YES];
+//    self.window.rootViewController = navi;
     
+    ViewController *vc = [[ViewController alloc] init];
+    self.window.rootViewController = vc;
     
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0

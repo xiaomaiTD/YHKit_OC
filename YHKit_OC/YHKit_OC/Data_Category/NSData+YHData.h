@@ -9,6 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (YHData)
+
+
+
+
+
+
+
+
+
+
+
 - (NSData *)yh_AES256EncryptWithKey:(NSString *)key;
 - (NSData *)yh_AES256DecryptWithKey:(NSString *)key;
 @end

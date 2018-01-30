@@ -9,6 +9,8 @@
 #import "YHDrawerVC.h"
 
 @interface YHDrawerVC ()
+/** 渐变layer */
+@property (nonatomic,strong) CAGradientLayer * bgGradient;
 
 @end
 
@@ -78,6 +80,12 @@
     self.mainVC = mainVC;
     [self add:self.mainVC];
 }
+#pragma mark - setter
+- (void)setYh_drawerColor:(UIColor *)yh_drawerColor{
+    _yh_drawerColor = yh_drawerColor;
+    self.view.backgroundColor = _yh_drawerColor;
+}
+
 @end
 
 

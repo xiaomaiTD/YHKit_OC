@@ -22,5 +22,6 @@
 #import "UIImage+YHColorToImage.h"
 #import "NSString+YHExchange.h"
 #import "NSString+YHValid.h"
+#import "NSString+YHExchange.h"
 #import "NSData+YHData.h"
 #endif /* YHKit_OC_h */
