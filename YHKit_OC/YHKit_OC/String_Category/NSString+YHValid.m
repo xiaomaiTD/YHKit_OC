@@ -15,9 +15,6 @@
     } else {
         return NO;
     }
-//    NSString *regex =@"[a-zA-z]+://[^\\s]*";
-//    NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
-//    return [urlTest evaluateWithObject:self];
 }
 
 /** 字符串是不是整形 */

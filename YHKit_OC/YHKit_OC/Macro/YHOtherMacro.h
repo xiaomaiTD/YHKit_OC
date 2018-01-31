@@ -14,9 +14,16 @@
 
 
 
-
+/** APP version */
 #define YH_AppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+/** APP build */
+#define YH_AppBulid   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
+
+/** 弧度转角度 */
+#define YH_RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
+/** 角度转弧度 */
+#define YH_DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 
 
 #endif /* YHOtherMacro_h */

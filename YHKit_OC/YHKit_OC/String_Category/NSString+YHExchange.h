@@ -14,10 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 中文格式化。如果有中文，则进行相应的转码 */
 - (NSString *)yh_formatStr;
-
-
 /** 解码 */
 - (NSString *)yh_deFormatStr;
+
+
 
 
 

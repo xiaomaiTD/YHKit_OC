@@ -57,6 +57,9 @@
     }
    
     AFHTTPSessionManager *sessionManager = [self sessionManagerWithRequestSerializerType:requestSerializerType responseSerializerType:responseSerializerType];
+    if (self.isHttps) {
+        sessionManager.securityPolicy = [self https];
+    }
     //当sessionManager不存在时，进行处理
     if (!sessionManager) {
         YHLog(@"sessionManager为空");
@@ -149,7 +152,12 @@
     }
     return task;
 }
-
+- (NSURLSessionTask *)yh_getNetRequestwithURLString:(NSString *)URLString withParameters:(id)parameters isShowHUD:(BOOL)isShowHUD hudBaseView:(UIView *)hudBaseView httpHeaders:(NSDictionary<NSString *,NSString *> *)httpHeaders successBlock:(void (^)(id _Nonnull))successBlock errorBlock:(void (^)(NSError * _Nonnull))errorBlock{
+    return [self yh_netRequestWithType:YHNetRequestTypeGET withURLString:URLString withParameters:parameters isShowHUD:isShowHUD hudBaseView:hudBaseView httpHeaders:httpHeaders requestSerializerType:YHNetRequestSerializerTypeKeyValue responseSerializerType:YHNetResponseSerializerTypeJson successBlock:successBlock errorBlock:errorBlock];
+}
+- (NSURLSessionTask *)yh_postNetRequestwithURLString:(NSString *)URLString withParameters:(id)parameters isShowHUD:(BOOL)isShowHUD hudBaseView:(UIView *)hudBaseView httpHeaders:(NSDictionary<NSString *,NSString *> *)httpHeaders successBlock:(void (^)(id _Nonnull))successBlock errorBlock:(void (^)(NSError * _Nonnull))errorBlock{
+    return [self yh_netRequestWithType:YHNetRequestTypePOST withURLString:URLString withParameters:parameters isShowHUD:isShowHUD hudBaseView:hudBaseView httpHeaders:httpHeaders requestSerializerType:YHNetRequestSerializerTypeKeyValue responseSerializerType:YHNetResponseSerializerTypeJson successBlock:successBlock errorBlock:errorBlock];
+}
 
 
 /** 上传单张图片---POST */
@@ -161,7 +169,9 @@
         return nil;
     }
     AFHTTPSessionManager *sessionManager = [self sessionManagerWithRequestSerializerType:YHNetRequestSerializerTypeKeyValue responseSerializerType:YHNetResponseSerializerTypeJson];
-    
+    if (self.isHttps) {
+        sessionManager.securityPolicy = [self https];
+    }
     //当sessionManager不存在时，进行处理
     if (!sessionManager) {
         YHLog(@"sessionManager为空");
@@ -417,7 +427,33 @@
         }
     }];
 }
-
+- (AFSecurityPolicy *)https{
+    if (!self.cerName && !self.cerContent) {
+        return nil;
+    }
+    NSData *cerData = nil;
+    if (!self.cerName && self.cerContent.length > 0) {
+        cerData = [[NSData alloc] initWithBase64EncodedString:self.cerContent options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    } else if (self.cerName.length > 0 && !self.cerContent) {
+        NSString *cerPath = [[NSBundle mainBundle] pathForResource:self.cerName ofType:@"cer"];//证书的路径
+        cerData = [NSData dataWithContentsOfFile:cerPath];
+    } else if (self.cerName.length > 0 && self.cerContent.length > 0) {
+        NSString *cerPath = [[NSBundle mainBundle] pathForResource:self.cerName ofType:@"cer"];//证书的路径
+        cerData = [NSData dataWithContentsOfFile:cerPath];
+    }
+    if (!cerData) {
+        return nil;
+    }
+    // AFSSLPinningModeCertificate 使用证书验证模式
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
+    // 如果是需要验证自建证书，需要设置为YES
+    securityPolicy.allowInvalidCertificates = YES;
+    //validatesDomainName 是否需要验证域名，默认为YES；
+    securityPolicy.validatesDomainName = YES;
+    securityPolicy.pinnedCertificates = [NSSet setWithObject:cerData];
+    return securityPolicy;
+}
 
 @end
 

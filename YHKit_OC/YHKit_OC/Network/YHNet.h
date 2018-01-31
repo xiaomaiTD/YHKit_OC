@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 /** 网络请求类型 */
 typedef NS_ENUM(NSUInteger, YHNetRequestType) {
@@ -43,6 +44,17 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
 @property (nonatomic,strong,readonly) NSMutableArray<NSURLSessionTask *> * tasks;
 
 
+
+/** 是否是https */
+@property (nonatomic,assign) BOOL isHttps;
+/** cer证书名字，如果cerName为空，将使用cerContent；当两者都有值，优先使用cerName */
+@property (nonatomic,copy) NSString * cerName;
+/** cer证书内容，data->base64解码之后的内容 */
+@property (nonatomic,copy) NSString * cerContent;
+
+
+
+
 /** 单列 */
 + (YHNet *)defaultNet;
 
@@ -61,6 +73,30 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
                                successBlock:(nullable void(^)(id responseObject))successBlock
                                  errorBlock:(nullable void(^)(NSError *error))errorBlock;
 
+/**
+ GET请求便利方法
+ requestSerializerType = YHNetRequestSerializerTypeKeyValue
+ responseSerializerType = YHNetResponseSerializerTypeJson
+ */
+- (NSURLSessionTask *)yh_getNetRequestwithURLString:(NSString *)URLString
+                                     withParameters:(nullable id)parameters
+                                          isShowHUD:(BOOL)isShowHUD
+                                        hudBaseView:(nullable UIView *)hudBaseView
+                                        httpHeaders:(nullable NSDictionary<NSString *,NSString *> *)httpHeaders
+                                       successBlock:(nullable void(^)(id responseObject))successBlock
+                                         errorBlock:(nullable void(^)(NSError *error))errorBlock;
+/**
+ POST请求便利方法
+ requestSerializerType = YHNetRequestSerializerTypeKeyValue
+ responseSerializerType = YHNetResponseSerializerTypeJson
+ */
+- (NSURLSessionTask *)yh_postNetRequestwithURLString:(NSString *)URLString
+                                     withParameters:(nullable id)parameters
+                                          isShowHUD:(BOOL)isShowHUD
+                                        hudBaseView:(nullable UIView *)hudBaseView
+                                        httpHeaders:(nullable NSDictionary<NSString *,NSString *> *)httpHeaders
+                                       successBlock:(nullable void(^)(id responseObject))successBlock
+                                         errorBlock:(nullable void(^)(NSError *error))errorBlock;
 
 /** 上传单张图片---POST */
 - (NSURLSessionTask *)yh_uploadImageWithUrlString:(NSString *)urlString
@@ -74,6 +110,9 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
                                       httpHeaders:(nullable NSDictionary *)httpHeaders
                                      successBlock:(nullable void(^)(id responseObject))successBlock
                                        errorBlock:(nullable void(^)(NSError *error))errorBlock;
+
+
+
 
 
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (YHColorToImage)
-
+/** 把颜色转换为图片 */
 + (UIImage *)yh_imageWithColor:(UIColor *)color;
 
 @end

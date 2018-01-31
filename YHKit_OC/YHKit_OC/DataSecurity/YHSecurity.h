@@ -93,6 +93,7 @@
 @interface YHSecurity : NSObject
 
 #pragma mark - RSA
+//测试发现，密钥必须用PKCS#8格式的才能解密
 /** 加密/解密 */
 + (NSString *)encryptString:(NSString *)str publicKey:(NSString *)pubKey;
 + (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey;

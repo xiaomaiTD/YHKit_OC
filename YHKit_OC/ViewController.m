@@ -47,7 +47,7 @@
     NSLog(@"str2:%@",str2);
     NSLog(@"str3:%@",str3);
     NSLog(@"str4:%@",str4);
-    NSLog(@"str5:%ld",str5);
+    NSLog(@"str5:%ld",(long)str5);
     NSLog(@"str7:%@",str7);
     NSLog(@"str8:%@",str8);
     NSLog(@"str9:%@",str9);
@@ -55,20 +55,8 @@
     NSLog(@"str11:%@",str11);
     NSLog(@"str12:%@",str12);
     NSLog(@"str13:%@",str13);
-    NSLog(@"str14:%ld",str14);
+    NSLog(@"str14:%ld",(long)str14);
     
-    NSLog(@"😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄");
-    NSString *str = @"你好";
-    
-    NSString *encryptStr = [NSString yh_rsaEncryptString:str publicKey:YHRSA_PUBLIC];
-    YHLog(@"加密后:%@",encryptStr);
-    
-    
-    
-    //    NSString *decryptStr = [NSString yh_rsa_decryptString:encryptStr privateKey:[NSString stringWithBase64EncodedString:YHRSA_PRIVATE]];
-    NSString *decryptStr = [NSString yh_rsaDecryptString:encryptStr privateKey:YHRSA_PRIVATE];
-    YHLog(@"解密:%@",decryptStr);
-    YHLog(@"😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄");
     
     
     

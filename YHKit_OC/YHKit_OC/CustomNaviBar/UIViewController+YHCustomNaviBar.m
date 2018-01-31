@@ -191,7 +191,6 @@ static CGFloat const BottomLineHeight = 0.5f;
     }
     frame.size.height = NaviHeight_bottom;
     self.yh_rightButton.frame = frame;
-    
 }
 - (NSString *)yh_rightTitle{
     return YH_RUNTIME_GET;

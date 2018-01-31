@@ -32,13 +32,11 @@ typedef NS_ENUM(NSUInteger, YHDrawerOpenMenuAnimationType) {
 @interface YHDrawerVC : UIViewController
 
 /** 抽屉的背景颜色(纯颜色) */
-@property (nonatomic,strong) UIColor * yh_drawerColor;
-
-
-
-
+@property (nonatomic,strong) UIColor              * yh_drawerColor;
 /** mainVC */
-@property (nonatomic,strong) UIViewController * mainVC;
+@property (nonatomic,strong) UIViewController     * mainVC;
+
+
 
 /** 单列 */
 + (YHDrawerVC *)sharedDrawer;
@@ -46,7 +44,10 @@ typedef NS_ENUM(NSUInteger, YHDrawerOpenMenuAnimationType) {
 
 
 
-/** 重新设置主页的方法 */
+/**
+ 重新设置主页的方法
+ 比如点击登录按钮，点击突出登录按钮
+ */
 - (void)yh_resetMainVC:(UIViewController *)mainVC withAnimationType:(YHDrawerResetMainPageAnimationType)animationType;
 
 
