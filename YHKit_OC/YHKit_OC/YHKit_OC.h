@@ -22,7 +22,6 @@
 #import "UIImage+YHColorToImage.h"
 #import "NSString+YHExchange.h"
 #import "NSString+YHValid.h"
-#import "NSString+YHExchange.h"
 #import "NSData+YHData.h"
 #import "YHSecurity.h"
 
