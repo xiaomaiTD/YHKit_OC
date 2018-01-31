@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "YHKit_OC"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "个人开发库、各种工具、类库、总结等"
 
   
