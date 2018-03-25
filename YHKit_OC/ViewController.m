@@ -29,19 +29,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *str1 = [YHDeviceUtil sharedUtil].yh_sim_carrierName;
-    NSString *str2 = [YHDeviceUtil sharedUtil].yh_sim_countryCode;
-    NSString *str3 = [YHDeviceUtil sharedUtil].yh_sim_netCode;
-    NSString *str4 = [YHDeviceUtil sharedUtil].yh_sim_isoCountryCode;
-    NSInteger str5 = [YHDeviceUtil sharedUtil].yh_sim_isAllowVOIP;
-    NSString *str7 = [YHDeviceUtil sharedUtil].yh_hardwareString;
-    NSString *str8 = [YHDeviceUtil sharedUtil].yh_systemVersion;
-    NSString *str9 = [YHDeviceUtil sharedUtil].yh_deveiceName;
-    NSString *str10 = [YHDeviceUtil sharedUtil].yh_appleName;
-    NSString *str11 = [YHDeviceUtil sharedUtil].yh_ipAdress;
-    NSString *str12 = [YHDeviceUtil sharedUtil].yh_ipAdressForWiFi;
-    NSString *str13 = [YHDeviceUtil sharedUtil].yh_ipAdressForCellular;
-    NSInteger str14 = [YHDeviceUtil sharedUtil].yh_isCanMakePhone;
+    NSString *str1 = [YHDeviceUtil sharedUtil].sim_carrierName;
+    NSString *str2 = [YHDeviceUtil sharedUtil].sim_countryCode;
+    NSString *str3 = [YHDeviceUtil sharedUtil].sim_netCode;
+    NSString *str4 = [YHDeviceUtil sharedUtil].sim_isoCountryCode;
+    NSInteger str5 = [YHDeviceUtil sharedUtil].sim_isAllowVOIP;
+    NSString *str7 = [YHDeviceUtil sharedUtil].hardwareString;
+    NSString *str8 = [YHDeviceUtil sharedUtil].systemVersion;
+    NSString *str9 = [YHDeviceUtil sharedUtil].deveiceName;
+    NSString *str10 = [YHDeviceUtil sharedUtil].appleName;
+    NSString *str11 = [YHDeviceUtil sharedUtil].ipAdress;
+    NSString *str12 = [YHDeviceUtil sharedUtil].ipAdressForWiFi;
+    NSString *str13 = [YHDeviceUtil sharedUtil].ipAdressForCellular;
+    NSInteger str14 = [YHDeviceUtil sharedUtil].isCanMakePhone;
     
     NSLog(@"str1:%@",str1);
     NSLog(@"str2:%@",str2);
@@ -57,7 +57,7 @@
     NSLog(@"str13:%@",str13);
     NSLog(@"str14:%ld",(long)str14);
     
-    
+    NSLog(@"%f",YH_HEIGHT(10));
     
     
 }

@@ -8,7 +8,6 @@
 
 #import "NSString+YHExchange.h"
 
-#import <Security/Security.h>
 
 @implementation NSString (YHExchange)
 
@@ -25,7 +24,7 @@
     
 }
 
-
+/** 解码 */
 - (NSString *)yh_deFormatStr{
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
     return [self stringByRemovingPercentEncoding];

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface NSString (YHValid)
 /** 字符串是不是url */
 - (BOOL)yh_isValidUrl;
@@ -28,3 +28,4 @@
 - (BOOL)yh_isValidEmail;
 
 @end
+NS_ASSUME_NONNULL_END

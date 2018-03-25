@@ -26,18 +26,18 @@
 
 
 @interface YHDeviceUtil()
-@property (nonatomic,copy) NSString     *yh_sim_carrierName;
-@property (nonatomic,copy) NSString     *yh_sim_countryCode;
-@property (nonatomic,copy) NSString     *yh_sim_netCode;
-@property (nonatomic,copy) NSString     *yh_sim_isoCountryCode;
-@property (nonatomic,assign) BOOL       yh_sim_isAllowVOIP;
-@property (nonatomic,copy) NSString     *yh_hardwareString;
-@property (nonatomic,copy) NSString     * yh_systemVersion;
-@property (nonatomic,copy) NSString     * yh_deveiceName;
-@property (nonatomic,copy) NSString     * yh_ipAdress;
-@property (nonatomic,copy) NSString     * yh_ipAdressForWiFi;
-@property (nonatomic,copy) NSString     * yh_ipAdressForCellular;
-@property (nonatomic,assign) BOOL       yh_isCanMakePhone;
+@property (nonatomic,copy) NSString     * sim_carrierName;
+@property (nonatomic,copy) NSString     * sim_countryCode;
+@property (nonatomic,copy) NSString     * sim_netCode;
+@property (nonatomic,copy) NSString     * sim_isoCountryCode;
+@property (nonatomic,assign) BOOL       sim_isAllowVOIP;
+@property (nonatomic,copy) NSString     * hardwareString;
+@property (nonatomic,copy) NSString     * systemVersion;
+@property (nonatomic,copy) NSString     * deveiceName;
+@property (nonatomic,copy) NSString     * ipAdress;
+@property (nonatomic,copy) NSString     * ipAdressForWiFi;
+@property (nonatomic,copy) NSString     * ipAdressForCellular;
+@property (nonatomic,assign) BOOL       isCanMakePhone;
 @end
 
 
@@ -62,27 +62,27 @@
         //是否允许VOIP
         BOOL isAllowVOIP = carrier.allowsVOIP;
         
-        device.yh_sim_carrierName = carrierName;
-        device.yh_sim_countryCode = countryCode;
-        device.yh_sim_netCode = netCode;
-        device.yh_sim_isoCountryCode = isoCountryCode;
-        device.yh_sim_isAllowVOIP = isAllowVOIP;
+        device.sim_carrierName = carrierName;
+        device.sim_countryCode = countryCode;
+        device.sim_netCode = netCode;
+        device.sim_isoCountryCode = isoCountryCode;
+        device.sim_isAllowVOIP = isAllowVOIP;
         
         struct utsname systemInfo;
         uname(&systemInfo);
         NSString *hardwareString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-        device.yh_hardwareString = hardwareString;
+        device.hardwareString = hardwareString;
         
     });
     return device;
 }
 /** 获取设备型号，比如iPhone9,2 */
-- (NSString *)yh_systemVersion{
+- (NSString *)systemVersion{
     return [UIDevice currentDevice].systemVersion;
 }
 /** 设备名字(比如iPhone 7 Plus) */
-- (NSString *)yh_deveiceName{
-    NSString *machineString = self.yh_hardwareString;
+- (NSString *)deveiceName{
+    NSString *machineString = self.hardwareString;
     
     if ([machineString isEqualToString:@"iPhone1,1"])   return kYHDevice_iphone_1G;
     if ([machineString isEqualToString:@"iPhone1,2"])   return kYHDevice_iphone_3G;
@@ -179,7 +179,7 @@
     return machineString;
 }
 
-- (NSString *)yh_ipAdress{
+- (NSString *)ipAdress{
     int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     NSMutableArray *ips = [NSMutableArray array];
     int BUFFERSIZE = 4096;
@@ -255,16 +255,29 @@
     freeifaddrs(addrs);
     return address;
 }
-- (NSString *)yh_ipAdressForWiFi{
+- (NSString *)ipAdressForWiFi{
     return [self ipAddressWithIfaName:@"en0"];
 }
-- (NSString *)yh_ipAdressForCellular{
+- (NSString *)ipAdressForCellular{
     return [self ipAddressWithIfaName:@"pdp_ip0"];
 }
-- (BOOL)yh_isCanMakePhone{
+- (BOOL)isCanMakePhone{
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];
 }
-- (NSString *)yh_appleName{
+- (NSString *)appleName{
     return [UIDevice currentDevice].name;
+}
+- (YHDeviceType)deviceType{
+    if ([self.deveiceName containsString:@"iPhone"]) {
+        return YHDeviceTypeIphone;
+    } else if ([self.deveiceName containsString:@"iPad"]) {
+        return YHDeviceTypeIpad;
+    } else if ([self.deveiceName containsString:@"AppleTV"]) {
+        return YHDeviceTypeAppleTV;
+    } else if ([self.deveiceName containsString:@"i386"] || [self.deveiceName containsString:@"x86_64"]) {
+        return YHDeviceTypeSimulator;
+    } else {
+        return YHDeviceTypeUnknown;
+    }
 }
 @end

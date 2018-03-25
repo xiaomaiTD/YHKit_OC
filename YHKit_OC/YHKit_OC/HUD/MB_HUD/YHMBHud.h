@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 菊花旋转，提示信息可为空，view可为空 */
 + (MBProgressHUD *)hudWithMessage:(NSString * _Nullable)message inView:(UIView * _Nullable)view;
 
-/** 仅仅只有一段提示信息，一段时间后消失，默认1.5s */
+/** 仅仅只有一段提示信息，一段时间后消失 */
 + (void)hudOnlyMessage:(NSString *)message inView:(UIView * _Nullable)view dismissBlock:( void(^ _Nullable )(void))dismissBlock;
 
 

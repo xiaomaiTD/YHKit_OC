@@ -110,7 +110,7 @@
             yh_MAIN_QUEUE(^{
                 [hud hideAnimated:YES];
             });
-            [YHMBHud hudOnlyMessage:error.localizedDescription inView:hudBaseView dismissBlock:nil];
+            [YHMBHud hudOnlyMessage:[self errorStrWithTask:task withError:error] inView:hudBaseView dismissBlock:nil];
 #endif
             errorBlock ? errorBlock(error) : nil;
         }];
@@ -142,7 +142,7 @@
             yh_MAIN_QUEUE(^{
                 [hud hideAnimated:YES];
             });
-            [YHMBHud hudOnlyMessage:error.localizedDescription inView:hudBaseView dismissBlock:nil];
+            [YHMBHud hudOnlyMessage:[self errorStrWithTask:task withError:error] inView:hudBaseView dismissBlock:nil];
 #endif
             errorBlock ? errorBlock(error) : nil;
         }];
@@ -222,7 +222,7 @@
         yh_MAIN_QUEUE(^{
             [hud hideAnimated:YES];
         });
-        [YHMBHud hudOnlyMessage:error.localizedDescription inView:hudBaseView dismissBlock:nil];
+        [YHMBHud hudOnlyMessage:[self errorStrWithTask:task withError:error] inView:hudBaseView dismissBlock:nil];
 #endif
         errorBlock ? errorBlock(error) : nil;
     }];
@@ -231,7 +231,13 @@
     }
     return task;
 }
-
+- (NSString *)errorStrWithTask:(NSURLSessionDataTask *)task withError:(NSError *)error{
+    NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+    NSInteger statusCode = response.statusCode;
+    NSString *reason = [NSHTTPURLResponse localizedStringForStatusCode:statusCode];
+    NSString *errorStr = [NSString stringWithFormat:@"ERROR: %@ (%ld)",reason,statusCode];
+    return errorStr;
+}
 
 
 
@@ -456,23 +462,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

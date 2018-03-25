@@ -9,6 +9,8 @@
 #ifndef YHRuntimeMacro_h
 #define YHRuntimeMacro_h
 
+//#import <objc/runtime.h>
+#import <objc/message.h>
 
 
 /** runtime get */
@@ -24,4 +26,41 @@
 
 
 
+/** 交换方法 */
+static inline void yh_swizzled_method(Class class, SEL origin_SEL, SEL swizzlwd_SEL) {
+    Method originMethod = class_getInstanceMethod(class, origin_SEL);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzlwd_SEL);
+    BOOL isAdd = class_addMethod(class, origin_SEL, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    if (isAdd) {
+        class_replaceMethod(class, swizzlwd_SEL, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+    } else {
+        method_exchangeImplementations(originMethod, swizzledMethod);
+    }
+}
+
+
+
+
 #endif /* YHRuntimeMacro_h */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

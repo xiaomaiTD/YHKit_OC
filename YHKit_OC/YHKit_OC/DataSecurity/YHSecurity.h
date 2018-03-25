@@ -89,7 +89,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+NS_ASSUME_NONNULL_BEGIN
 @interface YHSecurity : NSObject
 
 #pragma mark - RSA
@@ -114,7 +114,7 @@
 
 
 @end
-
+NS_ASSUME_NONNULL_END
 
 
 

@@ -11,7 +11,7 @@
 
 //HUD的背景颜色，默认黑色
 #define MB_HUD_COLOR      [UIColor blackColor]
-//HUD消失的时间，默认1.5秒
+//HUD消失的时间
 #define DISMISSTIME       2
 
 @implementation YHMBHud

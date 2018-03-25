@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (YHColorToImage)
 /** 把颜色转换为图片 */
 + (UIImage *)yh_imageWithColor:(UIColor *)color;
-
++ (UIImage *)yh_imageWithColor:(UIColor *)color size:(CGSize)size;
 @end
+NS_ASSUME_NONNULL_END

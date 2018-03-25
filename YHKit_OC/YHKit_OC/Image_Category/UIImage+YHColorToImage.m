@@ -11,7 +11,10 @@
 @implementation UIImage (YHColorToImage)
 
 + (UIImage *)yh_imageWithColor:(UIColor *)color{
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    return [self yh_imageWithColor:color size:CGSizeMake(1.0, 1.0)];
+}
++ (UIImage *)yh_imageWithColor:(UIColor *)color size:(CGSize)size{
+    CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
@@ -20,5 +23,4 @@
     UIGraphicsEndImageContext();
     return theImage;
 }
-
 @end

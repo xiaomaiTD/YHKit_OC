@@ -98,37 +98,49 @@
 #define kYHDevice_i386_Simulator          @"i386Simulator"
 #define kYHDevice_x86_64_Simulator        @"x86_64Simulator"
 
+typedef NS_ENUM(NSUInteger, YHDeviceType) {
+    YHDeviceTypeIphone, //iphone
+    YHDeviceTypeIpad, //ipad
+    YHDeviceTypeAppleTV, //apple tv
+    YHDeviceTypeSimulator, //simulator
+    YHDeviceTypeUnknown, //unknown(比如是Apple Watch)
+};
 
+NS_ASSUME_NONNULL_BEGIN
 @interface YHDeviceUtil : NSObject
 
 + (instancetype)sharedUtil;
 #pragma mark - sim卡信息
 /** 供应商名字，比如中国联通、中国移动 */
-@property (nonatomic,copy,readonly) NSString     *yh_sim_carrierName;
+@property (nonatomic,copy,readonly) NSString     * sim_carrierName;
 /** 国家编号，共3位，中国地区为460 */
-@property (nonatomic,copy,readonly) NSString     *yh_sim_countryCode;
+@property (nonatomic,copy,readonly) NSString     * sim_countryCode;
 /** 供应商网络编号，二到三个十进制数组成，中国移动MNC为00、02、07，中国联通的MNC为01、06、09，中国电信的MNC为03、05、11 */
-@property (nonatomic,copy,readonly) NSString     *yh_sim_netCode;
+@property (nonatomic,copy,readonly) NSString     * sim_netCode;
 /** isoCountryCode */
-@property (nonatomic,copy,readonly) NSString     *yh_sim_isoCountryCode;
+@property (nonatomic,copy,readonly) NSString     * sim_isoCountryCode;
 /** 是否允许VOIP */
-@property (nonatomic,assign,readonly) BOOL       yh_sim_isAllowVOIP;
+@property (nonatomic,assign,readonly) BOOL       sim_isAllowVOIP;
 #pragma mark - 设备信息
 /** 获取设备型号，比如iPhone9,2 */
-@property (nonatomic,copy,readonly) NSString     *yh_hardwareString;
+@property (nonatomic,copy,readonly) NSString     *hardwareString;
 /** 获取当前手机系统版本，比如11.1等等 */
-@property (nonatomic,copy,readonly) NSString     * yh_systemVersion;
+@property (nonatomic,copy,readonly) NSString     * systemVersion;
 /** 设备名字(比如iPhone 7 Plus) */
-@property (nonatomic,copy,readonly) NSString     * yh_deveiceName;
+@property (nonatomic,copy,readonly) NSString     * deveiceName;
 /** 苹果设备名字，比如“银河的iPhone”，该名称用户可以自定义 */
-@property (nonatomic,copy,readonly) NSString     * yh_appleName;
+@property (nonatomic,copy,readonly) NSString     * appleName;
 /** 获取IP地址 */
-@property (nonatomic,copy,readonly) NSString     * yh_ipAdress;
+@property (nonatomic,copy,readonly) NSString     * ipAdress;
 /** 获取IP地址(WiFi),当WiFi关闭时，值为null */
-@property (nonatomic,copy,readonly) NSString     * yh_ipAdressForWiFi;
+@property (nonatomic,copy,readonly) NSString     * ipAdressForWiFi;
 /** 获取IP地址(Cellular)，当蜂窝网络关闭时，值为null */
-@property (nonatomic,copy,readonly) NSString     * yh_ipAdressForCellular;
+@property (nonatomic,copy,readonly) NSString     * ipAdressForCellular;
 /** 该设备能否打电话 */
-@property (nonatomic,assign,readonly) BOOL       yh_isCanMakePhone;
+@property (nonatomic,assign,readonly) BOOL       isCanMakePhone;
+/** 判断设备类型（是iPhone还是iPad还是AppleTV还是Simulator） */
+@property (nonatomic,assign, readonly) YHDeviceType   deviceType;
 
 @end
+
+NS_ASSUME_NONNULL_END

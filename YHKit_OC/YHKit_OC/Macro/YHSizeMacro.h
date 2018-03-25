@@ -10,15 +10,21 @@
 #define YHSizeMacro_h
 
 /*
- IPhone X: 375 x 812
- IPhone 8:
- IPhone 7: 375 x 667
- IPhone 7 plus: 414 x 736
- IPhone 6: 375 x 667
- IPhone 6s: 375 x 667
- IPhone 6s plus: 414 x 736
- IPhone 5: 320 x 568
- IPhone 5s: 320 x 568
+ IPhone X:            375 x 812             3x
+ 
+ IPhone 8:            375 x 667             2x
+ iPhone 8 Plus:       414 x 736             3x
+ 
+ IPhone 7:            375 x 667             2x
+ IPhone 7 plus:       414 x 736             3x
+ 
+ IPhone 6:            375 x 667             2x
+ IPhone 6s:           375 x 667             2x
+ iPhone 6 Plus:       414 x 736             3x
+ IPhone 6s plus:      414 x 736             3x
+ 
+ IPhone 5:            320 x 568             2x
+ IPhone 5s:           320 x 568             2x
  */
 
 /** 屏幕宽度 */
@@ -26,21 +32,36 @@
 /** 屏幕高度 */
 #define YH_SCREENHEIGHT         [UIScreen mainScreen].bounds.size.height
 
-//以7plus为基准，长宽按比例缩放
-#define YH_HEIGHT(h)            (h/736.f*YH_SCREENHEIGHT)
-#define YH_WIDTH(w)             (w/414.f*YH_SCREENWIDTH)
+//只有当设备是5系列时，才对高度做处理，其他情况用实际高度
+#define YH_HEIGHT(h) \
+({ \
+CGFloat height = h; \
+if YH_IS_IPHONE_5_SERIES { \
+height = h/667.f*YH_SCREENHEIGHT; \
+} \
+(height); \
+})
+//只有当设备是5系列时，才对宽度做处理，其他情况用实际高度
+#define YH_WIDTH(w) \
+({ \
+CGFloat width = w; \
+if YH_IS_IPHONE_5_SERIES { \
+width = w/375.f*YH_SCREENHEIGHT; \
+} \
+(width); \
+})
 
 /** iPhone X 高度 */
 #define YH_IPHONE_X_HEIGHT      812.f
 /** iPhone X 宽度 */
 #define YH_IPHONE_X_WIDTH       375.f
 
-/** 是否是iPhone 5系列，iPhone 5系列机型的狂傲都一样 */
+/** 是否是iPhone 5系列，iPhone 5系列机型的宽高都一样 */
 #define YH_IS_IPHONE_5_SERIES   (YH_SCREENWIDTH==320.f && YH_SCREENHEIGHT==568.f)
 
 
 /** 状态栏Frame
- 1、当状态栏是隐藏的时候，是CGRectZero
+ 1、当状态栏是隐藏的时候，是CGRectZero，iPhone X状态栏永远不隐藏
  2、当状态栏不隐藏的时候。iPhone X：44px    其他机型:20px
  */
 #define YH_STATUSBARFRAME       [[UIApplication sharedApplication] statusBarFrame]

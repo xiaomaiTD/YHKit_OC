@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "YHKit_OC"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "个人开发库、各种工具、类库、总结等"
 
   
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
 
   # 资源文件
-  s.resources    = 'YHKit_OC/YHKit_OC/Album/*.{strings,xcassets}'
+  s.resources    = 'YHKit_OC/YHKit_OC/Album/*.{strings,xcassets},YHKit_OC/YHKit_OC/CustomNaviBar/YHNavigation.bundle'
   s.source_files  = "YHKit_OC/YHKit_OC/**/*.{h,m}"
   # s.source_files  = "YHKit_OC/YHKit_OC/YHKit_OC.h"
   # s.public_header_files = "YHKit_OC/YHKit_OC/YHKit_OC.h"
@@ -103,10 +103,12 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependencys = "AFNetworking","MBProgressHUD", "SDAutoLayout", "Masonry"
-  s.dependency "AFNetworking"
-  s.dependency "MBProgressHUD"
-  s.dependency "SDAutoLayout"
-  s.dependency "Masonry"
-  s.dependency "FDFullscreenPopGesture"
+
+
+  # s.dependency "AFNetworking"
+  # s.dependency "MBProgressHUD"
+  # s.dependency "SDAutoLayout"
+  # s.dependency "Masonry"
+  # s.dependency "FDFullscreenPopGesture"
 
 end

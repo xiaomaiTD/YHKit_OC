@@ -13,6 +13,8 @@
 
 #import "ViewController.h"
 
+#import "CustomNaviVC.h"
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
     #import <UserNotifications/UserNotifications.h>
 #endif
@@ -27,7 +29,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor orangeColor];
+    //self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
     
 //    TestViewController *t = [[TestViewController alloc] init];
@@ -35,9 +37,17 @@
 //    [navi setNavigationBarHidden:YES];
 //    self.window.rootViewController = navi;
     
-    ViewController *vc = [[ViewController alloc] init];
-    self.window.rootViewController = vc;
+//    ViewController *vc = [[ViewController alloc] init];
+//    self.window.rootViewController = vc;
     
+    CustomNaviVC *vc = [[CustomNaviVC alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+    [navi setNavigationBarHidden:YES];
+//    self.window.rootViewController = vc;
+    
+    YHDrawerVC *drawer = [YHDrawerVC sharedDrawer];
+    drawer.mainVC = navi;
+    self.window.rootViewController = [YHDrawerVC getAppDelegateRootVCWith:drawer];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
     if (@available(iOS 10_0, *)) {
