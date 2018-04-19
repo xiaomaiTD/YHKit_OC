@@ -41,12 +41,12 @@
 //    self.window.rootViewController = vc;
     
     CustomNaviVC *vc = [[CustomNaviVC alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
-    [navi setNavigationBarHidden:YES];
+//    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+//    [navi setNavigationBarHidden:YES];
 //    self.window.rootViewController = vc;
     
     YHDrawerVC *drawer = [YHDrawerVC sharedDrawer];
-    drawer.mainVC = navi;
+    drawer.mainVC = vc;
     self.window.rootViewController = [YHDrawerVC getAppDelegateRootVCWith:drawer];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0

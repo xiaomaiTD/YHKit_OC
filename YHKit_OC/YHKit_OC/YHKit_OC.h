@@ -20,7 +20,9 @@
 #import "YHBaseViewController.h"
 #import "YHBundleMacro.h"
 #import "YHTransition.h"
+#import "YHRACMacro.h"
 
+#import "UIImage+YHQRImage.h"
 #import "UIViewController+YHSystemPhoto.h"
 #import "UIViewController+YHCustomNaviBar.h"
 #import "UIImage+YHColorToImage.h"

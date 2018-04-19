@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong,nullable) UIColor * yh_naviBgColor;
 /** 导航栏背景图片 */
 @property (nonatomic,strong,nullable) UIImage * yh_naviBgImage;
+/** 是否隐藏自定义导航栏 */
+@property (nonatomic,assign) BOOL yh_isHidenNaviBar;
 
 /**
  设置shadowImage颜色

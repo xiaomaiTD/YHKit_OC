@@ -452,8 +452,7 @@
     }
     // AFSSLPinningModeCertificate 使用证书验证模式
     AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-    // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
-    // 如果是需要验证自建证书，需要设置为YES
+    // 如果是需要验证自建证书，需要设置为YES   allowInvalidCertificates  是否允许无效证书（也就是自建的证书），默认为NO
     securityPolicy.allowInvalidCertificates = YES;
     //validatesDomainName 是否需要验证域名，默认为YES；
     securityPolicy.validatesDomainName = YES;

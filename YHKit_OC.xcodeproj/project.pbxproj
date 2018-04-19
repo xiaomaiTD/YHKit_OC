@@ -15,6 +15,8 @@
 		EE16463020483C5B0091AF4A /* YHMBHud.m in Sources */ = {isa = PBXBuildFile; fileRef = EE16462F20483C5B0091AF4A /* YHMBHud.m */; };
 		EE2C2D0F202980F700009E6E /* UIBarButtonItem+YHBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2C2D0E202980F700009E6E /* UIBarButtonItem+YHBarButtonItem.m */; };
 		EE2C2D122029835E00009E6E /* YHBarButtonItemConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2C2D112029835E00009E6E /* YHBarButtonItemConfigure.m */; };
+		EE387CC820889616005F7FA5 /* YHNavigation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE387CC720889616005F7FA5 /* YHNavigation.xcassets */; };
+		EE387CCB208896A7005F7FA5 /* UIImage+YHQRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EE387CCA208896A7005F7FA5 /* UIImage+YHQRImage.m */; };
 		EE43B64220200ACE00B6C2A5 /* YHSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = EE43B64120200ACE00B6C2A5 /* YHSecurity.m */; };
 		EE4625A420469CB800BC835B /* VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4625A320469CB800BC835B /* VC2.m */; };
 		EE4625A72046A9A100BC835B /* YHTransitionManager+MiddlePage.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4625A62046A9A100BC835B /* YHTransitionManager+MiddlePage.m */; };
@@ -87,6 +89,9 @@
 		EE2C2D0E202980F700009E6E /* UIBarButtonItem+YHBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YHBarButtonItem.m"; sourceTree = "<group>"; };
 		EE2C2D102029835E00009E6E /* YHBarButtonItemConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBarButtonItemConfigure.h; sourceTree = "<group>"; };
 		EE2C2D112029835E00009E6E /* YHBarButtonItemConfigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBarButtonItemConfigure.m; sourceTree = "<group>"; };
+		EE387CC720889616005F7FA5 /* YHNavigation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YHNavigation.xcassets; sourceTree = "<group>"; };
+		EE387CC9208896A7005F7FA5 /* UIImage+YHQRImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YHQRImage.h"; sourceTree = "<group>"; };
+		EE387CCA208896A7005F7FA5 /* UIImage+YHQRImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YHQRImage.m"; sourceTree = "<group>"; };
 		EE43B64020200ACE00B6C2A5 /* YHSecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHSecurity.h; sourceTree = "<group>"; };
 		EE43B64120200ACE00B6C2A5 /* YHSecurity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHSecurity.m; sourceTree = "<group>"; };
 		EE4625A220469CB800BC835B /* VC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC2.h; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 		EE534C7B202BFF33006C9BD4 /* YHBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBaseViewController.m; sourceTree = "<group>"; };
 		EE534C7D202C4582006C9BD4 /* CustomNaviVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNaviVC.h; sourceTree = "<group>"; };
 		EE534C7E202C4582006C9BD4 /* CustomNaviVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNaviVC.m; sourceTree = "<group>"; };
+		EE59265520847CDA005F8428 /* YHRACMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHRACMacro.h; sourceTree = "<group>"; };
 		EE6246C9200363B900D89E86 /* YHPhotoBigPreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPhotoBigPreVC.h; sourceTree = "<group>"; };
 		EE6246CA200363B900D89E86 /* YHPhotoBigPreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPhotoBigPreVC.m; sourceTree = "<group>"; };
 		EE6246CB200363B900D89E86 /* YHPhotoBroswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPhotoBroswer.h; sourceTree = "<group>"; };
@@ -256,13 +262,6 @@
 			path = DataSecurity;
 			sourceTree = "<group>";
 		};
-		EE534C80202C4956006C9BD4 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		EE6246C6200363B900D89E86 /* YHKit_OC */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +387,7 @@
 				EE534C78202BFE2F006C9BD4 /* YHNavigationBar.m */,
 				EE534C7A202BFF33006C9BD4 /* YHBaseViewController.h */,
 				EE534C7B202BFF33006C9BD4 /* YHBaseViewController.m */,
+				EE387CC720889616005F7FA5 /* YHNavigation.xcassets */,
 				EEF924FA202C6E2E00421D56 /* YHNavigation.bundle */,
 			);
 			path = CustomNaviBar;
@@ -425,6 +425,8 @@
 			children = (
 				EE6246FC200363B900D89E86 /* UIImage+YHColorToImage.h */,
 				EE6246FD200363B900D89E86 /* UIImage+YHColorToImage.m */,
+				EE387CC9208896A7005F7FA5 /* UIImage+YHQRImage.h */,
+				EE387CCA208896A7005F7FA5 /* UIImage+YHQRImage.m */,
 			);
 			path = Image_Category;
 			sourceTree = "<group>";
@@ -441,6 +443,7 @@
 				EE624705200363B900D89E86 /* YHSizeMacro.h */,
 				EE624706200363B900D89E86 /* YHThreadMacro.h */,
 				EEF924FC202C6F2C00421D56 /* YHBundleMacro.h */,
+				EE59265520847CDA005F8428 /* YHRACMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -502,7 +505,6 @@
 		EE817A341FAC696F003AC5B6 = {
 			isa = PBXGroup;
 			children = (
-				EE534C80202C4956006C9BD4 /* New Group */,
 				EE817A3F1FAC696F003AC5B6 /* YHKit_OC */,
 				EE817A3E1FAC696F003AC5B6 /* Products */,
 				697F7A191AACFBDE821B3017 /* Pods */,
@@ -635,6 +637,7 @@
 			files = (
 				EE817A4D1FAC696F003AC5B6 /* LaunchScreen.storyboard in Resources */,
 				EE624723200363BA00D89E86 /* YHPhotoBroswer.strings in Resources */,
+				EE387CC820889616005F7FA5 /* YHNavigation.xcassets in Resources */,
 				EE624722200363BA00D89E86 /* YHAlbumAssets.xcassets in Resources */,
 				EEF924FB202C6E2E00421D56 /* YHNavigation.bundle in Resources */,
 				EE817A4A1FAC696F003AC5B6 /* Assets.xcassets in Resources */,
@@ -714,6 +717,7 @@
 				EE16463020483C5B0091AF4A /* YHMBHud.m in Sources */,
 				EE0EB3E0203FF39700643871 /* RightMenuVC.m in Sources */,
 				EE62471B200363BA00D89E86 /* YHPhotoListModel.m in Sources */,
+				EE387CCB208896A7005F7FA5 /* UIImage+YHQRImage.m in Sources */,
 				EE627ED320429D7500946252 /* UIViewController+YHTransition.m in Sources */,
 				EE62472A200363BA00D89E86 /* YHDrawerVC.m in Sources */,
 				EE916C35202B1AD60028A7D4 /* UINavigationBar+YHNavigationBar.m in Sources */,

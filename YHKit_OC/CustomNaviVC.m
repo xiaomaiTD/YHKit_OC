@@ -103,6 +103,12 @@
                         @"自定义导航栏push",
                         @"自定义导航栏-转场push"];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self aaaaaaa];
+    });
+}
+- (void)aaaaaaa{
+    NSLog(@"111");
 }
 - (void)adsa:(id)sender{
     NSLog(@"%@",sender);

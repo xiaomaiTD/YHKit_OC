@@ -9,14 +9,7 @@
 #import "NSString+YHValid.h"
 
 @implementation NSString (YHValid)
-- (BOOL)yh_isValidUrl{
-    if ([self hasPrefix:@"http://"] || [self hasPrefix:@"https://"]) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
+#pragma mark - --
 /** 字符串是不是整形 */
 - (BOOL)yh_isInt{
     NSScanner* scan = [NSScanner scannerWithString:self];
@@ -76,10 +69,60 @@
     }];
     return returnValue;
 }
+#pragma mark - 正则表达式判断
+/** 是否是url */
+- (BOOL)yh_isValidUrl{
+    NSPredicate *urlReg = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", k_YH_URL_Regex];
+    return [urlReg evaluateWithObject:self];
+}
 /** 是否是邮箱 */
 - (BOOL)yh_isValidEmail{
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:self];
+    NSPredicate *emailReg = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", k_YH_Email_Regex];
+    return [emailReg evaluateWithObject:self];
+}
+/** 是不是手机号(中国) */
+- (BOOL)yh_isPhone_CN{
+    NSPredicate *phone_cn_rege = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", k_YH_Phone_CN_Regex];
+    return [phone_cn_rege evaluateWithObject:self];
+}
+/** 是否是纯数字 */
+- (BOOL)yh_isNumber1{
+    NSPredicate *number_rege = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", k_YH_Number_Regex];
+    return [number_rege evaluateWithObject:self];
+}
+/** 是否是纯大写字母 */
+- (BOOL)yh_isUpperAlphabet{
+    NSPredicate *upperAlphabet_rege = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", k_YH_UpperAlphabet_Regex];
+    return [upperAlphabet_rege evaluateWithObject:self];
+}
+/** 是否是纯小写字母 */
+- (BOOL)yh_isLowerAlphabet{
+    NSPredicate *lowerAlphabet_rege = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", k_YH_LowerAlphabet_Regex];
+    return [lowerAlphabet_rege evaluateWithObject:self];
+}
+/** 是否是纯字母 */
+- (BOOL)yh_isAlphabet{
+    NSPredicate *alphabet_rege = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", k_YH_Alphabet_Regex];
+    return [alphabet_rege evaluateWithObject:self];
 }
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

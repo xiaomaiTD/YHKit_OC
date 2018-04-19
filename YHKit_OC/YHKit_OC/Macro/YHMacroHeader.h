@@ -16,5 +16,6 @@
 #import "YHRuntimeMacro.h"
 #import "YHOtherMacro.h"
 #import "YHDeviceMacro.h"
+#import "YHBundleMacro.h"
 
 #endif /* YHMacroHeader_h */

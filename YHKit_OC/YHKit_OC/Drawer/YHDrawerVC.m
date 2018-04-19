@@ -586,23 +586,9 @@
 
 @implementation YHDrawerNavi
 - (void)viewDidLoad{
+    [super viewDidLoad];
     [self setNavigationBarHidden:YES];
 }
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

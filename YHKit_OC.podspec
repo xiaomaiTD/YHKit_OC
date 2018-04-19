@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
 
   # 资源文件
-  s.resources    = 'YHKit_OC/YHKit_OC/Album/*.{strings,xcassets},YHKit_OC/YHKit_OC/CustomNaviBar/YHNavigation.bundle'
+  s.resources    = ['YHKit_OC/YHKit_OC/Album/*.{strings,xcassets}','YHKit_OC/YHKit_OC/CustomNaviBar/YHNavigation.bundle']
   s.source_files  = "YHKit_OC/YHKit_OC/**/*.{h,m}"
   # s.source_files  = "YHKit_OC/YHKit_OC/YHKit_OC.h"
   # s.public_header_files = "YHKit_OC/YHKit_OC/YHKit_OC.h"
@@ -105,10 +105,10 @@ Pod::Spec.new do |s|
   # s.dependencys = "AFNetworking","MBProgressHUD", "SDAutoLayout", "Masonry"
 
 
-  # s.dependency "AFNetworking"
-  # s.dependency "MBProgressHUD"
-  # s.dependency "SDAutoLayout"
-  # s.dependency "Masonry"
-  # s.dependency "FDFullscreenPopGesture"
+  s.dependency "AFNetworking"
+  s.dependency "MBProgressHUD"
+  s.dependency "SDAutoLayout"
+  s.dependency "Masonry"
+  s.dependency "FDFullscreenPopGesture"
 
 end
