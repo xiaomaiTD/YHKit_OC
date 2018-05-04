@@ -109,8 +109,4 @@
 - (CGFloat)bottom_yh{
     return self.frame.origin.y + self.frame.size.height;
 }
-#pragma mark - xib
-+ (instancetype)viewFromXibName:(NSString *)xibName{
-    return [[[NSBundle mainBundle] loadNibNamed:xibName owner:nil options:nil] lastObject];
-}
 @end

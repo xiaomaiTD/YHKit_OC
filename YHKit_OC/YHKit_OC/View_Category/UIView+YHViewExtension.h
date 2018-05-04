@@ -31,7 +31,5 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) CGFloat right_yh;
 /** bottom --liujun */
 @property (nonatomic,assign) CGFloat bottom_yh;
-/** xib --liujun */
-+ (instancetype)viewFromXibName:(NSString *)xibName;
 @end
 NS_ASSUME_NONNULL_END

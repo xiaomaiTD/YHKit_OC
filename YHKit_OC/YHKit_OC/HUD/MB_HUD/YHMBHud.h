@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (MBProgressHUD *)hudWithMessage:(NSString * _Nullable)message inView:(UIView * _Nullable)view;
 
 /** 仅仅只有一段提示信息，一段时间后消失 */
-+ (void)hudOnlyMessage:(NSString *)message inView:(UIView * _Nullable)view dismissBlock:( void(^ _Nullable )(void))dismissBlock;
++ (void)hudOnlyMessage:(NSString *)message inView:(UIView * _Nullable)view dismissBlock:(void(^ _Nullable)(void))dismissBlock;
 
 
 #endif

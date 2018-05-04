@@ -24,7 +24,6 @@
     yh_MAIN_QUEUE(^{
         hud = [MBProgressHUD showHUDAddedTo:view animated:YES];//必须在主线程，源码规定
     });
-    
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.contentColor = [UIColor whiteColor];
     hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
@@ -58,10 +57,5 @@
     });
     hud.completionBlock = dismissBlock;
 }
-
-
 #endif
-
-
-
 @end

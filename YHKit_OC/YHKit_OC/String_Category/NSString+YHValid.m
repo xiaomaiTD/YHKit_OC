@@ -106,23 +106,3 @@
     return [alphabet_rege evaluateWithObject:self];
 }
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
