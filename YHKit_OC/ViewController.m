@@ -59,7 +59,11 @@
     
     NSLog(@"%f",YH_HEIGHT(10));
     
-    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"" bundle:nil];
+//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@""];
+//    NSBundle *bundle = [NSBundle mainBundle];
+    UIViewController *vc = YH_VC_SB(@"main", @"asdsa");
+    UIColor *color = YH_HexColor1(0xfff00);
 }
 - (IBAction)alertTestAction:(id)sender {
   

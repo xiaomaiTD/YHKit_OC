@@ -270,13 +270,13 @@
     return ret;
 }
 
-+ (NSString *)encryptString:(NSString *)str privateKey:(NSString *)privKey{
-    NSData *data = [self encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] privateKey:privKey];
++ (NSString *)rsa_encryptString:(NSString *)str privateKey:(NSString *)privKey{
+    NSData *data = [self rsa_encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] privateKey:privKey];
     NSString *ret = [self base64EncodeWithData:data];
     return ret;
 }
 
-+ (NSData *)encryptData:(NSData *)data privateKey:(NSString *)privKey{
++ (NSData *)rsa_encryptData:(NSData *)data privateKey:(NSString *)privKey{
     if(!data || !privKey){
         return nil;
     }
@@ -341,9 +341,9 @@
 }
 
 
-+ (NSString *)decryptString:(NSString *)str privateKey:(NSString *)privKey{
++ (NSString *)rsa_decryptString:(NSString *)str privateKey:(NSString *)privKey{
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    data = [self decryptData:data privateKey:privKey];
+    data = [self rsa_decryptData:data privateKey:privKey];
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return ret;
 }
@@ -351,7 +351,7 @@
 
 //- (NSString *)
 
-+ (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey{
++ (NSData *)rsa_decryptData:(NSData *)data privateKey:(NSString *)privKey{
     if(!data || !privKey){
         return nil;
     }
@@ -366,13 +366,13 @@
 
 /* START: Encryption & Decryption with RSA public key */
 
-+ (NSString *)encryptString:(NSString *)str publicKey:(NSString *)pubKey{
-    NSData *data = [self encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] publicKey:pubKey];
++ (NSString *)rsa_encryptString:(NSString *)str publicKey:(NSString *)pubKey{
+    NSData *data = [self rsa_encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] publicKey:pubKey];
     NSString *ret = [self base64EncodeWithData:data];
     return ret;
 }
 
-+ (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey{
++ (NSData *)rsa_encryptData:(NSData *)data publicKey:(NSString *)pubKey{
     if(!data || !pubKey){
         return nil;
     }
@@ -383,14 +383,14 @@
     return [self encryptData:data withKeyRef:keyRef isSign:NO];
 }
 
-+ (NSString *)decryptString:(NSString *)str publicKey:(NSString *)pubKey{
++ (NSString *)rsa_decryptString:(NSString *)str publicKey:(NSString *)pubKey{
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    data = [self decryptData:data publicKey:pubKey];
+    data = [self rsa_decryptData:data publicKey:pubKey];
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return ret;
 }
 
-+ (NSData *)decryptData:(NSData *)data publicKey:(NSString *)pubKey{
++ (NSData *)rsa_decryptData:(NSData *)data publicKey:(NSString *)pubKey{
     if(!data || !pubKey){
         return nil;
     }

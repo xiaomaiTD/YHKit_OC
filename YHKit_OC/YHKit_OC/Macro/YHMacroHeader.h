@@ -17,5 +17,7 @@
 #import "YHOtherMacro.h"
 #import "YHDeviceMacro.h"
 #import "YHBundleMacro.h"
+#import "YHRACMacro.h"
+#import "YHInterfaceBuilder.h"
 
 #endif /* YHMacroHeader_h */

@@ -104,6 +104,7 @@
 		EE534C7B202BFF33006C9BD4 /* YHBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBaseViewController.m; sourceTree = "<group>"; };
 		EE534C7D202C4582006C9BD4 /* CustomNaviVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNaviVC.h; sourceTree = "<group>"; };
 		EE534C7E202C4582006C9BD4 /* CustomNaviVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNaviVC.m; sourceTree = "<group>"; };
+		EE539067209B54FF00FF503E /* YHInterfaceBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHInterfaceBuilder.h; sourceTree = "<group>"; };
 		EE59265520847CDA005F8428 /* YHRACMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHRACMacro.h; sourceTree = "<group>"; };
 		EE6246C9200363B900D89E86 /* YHPhotoBigPreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPhotoBigPreVC.h; sourceTree = "<group>"; };
 		EE6246CA200363B900D89E86 /* YHPhotoBigPreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPhotoBigPreVC.m; sourceTree = "<group>"; };
@@ -444,6 +445,7 @@
 				EE624706200363B900D89E86 /* YHThreadMacro.h */,
 				EEF924FC202C6F2C00421D56 /* YHBundleMacro.h */,
 				EE59265520847CDA005F8428 /* YHRACMacro.h */,
+				EE539067209B54FF00FF503E /* YHInterfaceBuilder.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";

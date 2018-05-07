@@ -82,6 +82,19 @@
  4. B比较两个消息摘要。相同则验证成功;不同则验证失败
  
  
+               /--\                   |-----------               /------
+              /    \                  |                         /
+             /      \                 |                        /
+            /        \                |                        \
+           /----------\               |-----------              \
+          /            \              |                          \
+         /              \             |                           /
+        /                \            |                          /
+       /                  \           |-----------       -------/
+ 
+ 
+
+ 
  
  
  */
@@ -95,15 +108,15 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - RSA
 //测试发现，密钥必须用PKCS#8格式的才能解密
 /** 加密/解密 */
-+ (NSString *)encryptString:(NSString *)str publicKey:(NSString *)pubKey;
-+ (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey;
-+ (NSString *)decryptString:(NSString *)str privateKey:(NSString *)privKey;//解密返回的数据就是原始数据，不是经过base64的
-+ (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey;
++ (NSString *)rsa_encryptString:(NSString *)str publicKey:(NSString *)pubKey;
++ (NSData *)rsa_encryptData:(NSData *)data publicKey:(NSString *)pubKey;
++ (NSString *)rsa_decryptString:(NSString *)str privateKey:(NSString *)privKey;//解密返回的数据就是原始数据，不是经过base64的
++ (NSData *)rsa_decryptData:(NSData *)data privateKey:(NSString *)privKey;
 /** 签名/验签 */
-+ (NSString *)encryptString:(NSString *)str privateKey:(NSString *)privKey;
-+ (NSData *)encryptData:(NSData *)data privateKey:(NSString *)privKey;
-+ (NSString *)decryptString:(NSString *)str publicKey:(NSString *)pubKey;//解签返回的数据就是原始数据，不是经过base64的
-+ (NSData *)decryptData:(NSData *)data publicKey:(NSString *)pubKey;
++ (NSString *)rsa_encryptString:(NSString *)str privateKey:(NSString *)privKey;
++ (NSData *)rsa_encryptData:(NSData *)data privateKey:(NSString *)privKey;
++ (NSString *)rsa_decryptString:(NSString *)str publicKey:(NSString *)pubKey;//解签返回的数据就是原始数据，不是经过base64的
++ (NSData *)rsa_decryptData:(NSData *)data publicKey:(NSString *)pubKey;
 #pragma mark - MD5
 
 #pragma mark - AES

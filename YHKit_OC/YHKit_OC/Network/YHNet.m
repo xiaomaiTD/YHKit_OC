@@ -26,17 +26,41 @@
 @end
 
 
-@implementation YHNet
+@implementation YHNet {
+    AFHTTPSessionManager *_sessionManager;
+}
 
 + (YHNet *)defaultNet{
     static YHNet *net = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        net = [[YHNet alloc] init];
+        net = [[self alloc] init];
         net.tasks = [NSMutableArray array];
     });
     return net;
 }
++ (YHNet *)sharedNet{
+    static id sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        _sessionManager = [AFHTTPSessionManager manager];
+    }
+    return self;
+}
+
+
+
+
+
+
+
 
 /** 网络请求，现在暂时只支持GET、POST */
 - (NSURLSessionTask *)yh_netRequestWithType:(YHNetRequestType)requestType
@@ -57,6 +81,7 @@
     }
    
     AFHTTPSessionManager *sessionManager = [self sessionManagerWithRequestSerializerType:requestSerializerType responseSerializerType:responseSerializerType];
+    
     if (self.isHttps) {
         sessionManager.securityPolicy = [self https];
     }
@@ -459,5 +484,39 @@
     securityPolicy.pinnedCertificates = [NSSet setWithObject:cerData];
     return securityPolicy;
 }
+
+@end
+
+
+
+
+
+@implementation YHNet (YHRequestHTTP)
++ (AFHTTPRequestSerializer *)requestSerializerForHTTP{
+    static AFHTTPRequestSerializer *HTTPRequestSerializer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        HTTPRequestSerializer = [AFHTTPRequestSerializer serializer];
+    });
+    return HTTPRequestSerializer;
+}
+@end
+
+
+
+@implementation YHNet (YHRequestJSON)
++ (AFJSONRequestSerializer *)requestSerializerForJSON{
+    static AFJSONRequestSerializer *JSONRequestSerializer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        JSONRequestSerializer = [AFJSONRequestSerializer serializer];
+        [JSONRequestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    });
+    return JSONRequestSerializer;
+}
+@end
+
+
+@implementation YHNet (YHResponseHTTP)
 
 @end
