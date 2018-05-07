@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E23239EEC1823ABEE9DEF2B884B7230A"
-               BuildableName = "libPods-YHKit_OC.a"
+               BlueprintIdentifier = "79FFD1AF1FF1C61CC80DBD302428233F"
+               BuildableName = "Pods_YHKit_OC.framework"
                BlueprintName = "Pods-YHKit_OC"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E23239EEC1823ABEE9DEF2B884B7230A"
-            BuildableName = "libPods-YHKit_OC.a"
+            BlueprintIdentifier = "79FFD1AF1FF1C61CC80DBD302428233F"
+            BuildableName = "Pods_YHKit_OC.framework"
             BlueprintName = "Pods-YHKit_OC"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

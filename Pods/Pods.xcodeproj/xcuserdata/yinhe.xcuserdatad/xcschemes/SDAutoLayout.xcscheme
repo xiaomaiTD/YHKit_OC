@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA79A96C6009C44CBBEDE7B0EF05EA93"
-               BuildableName = "libSDAutoLayout.a"
+               BlueprintIdentifier = "98CC2FB1FC15BE61489C72640A2A8893"
+               BuildableName = "SDAutoLayout.framework"
                BlueprintName = "SDAutoLayout"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA79A96C6009C44CBBEDE7B0EF05EA93"
-            BuildableName = "libSDAutoLayout.a"
+            BlueprintIdentifier = "98CC2FB1FC15BE61489C72640A2A8893"
+            BuildableName = "SDAutoLayout.framework"
             BlueprintName = "SDAutoLayout"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

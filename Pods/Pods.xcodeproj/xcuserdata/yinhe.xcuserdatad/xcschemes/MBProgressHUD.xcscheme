@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "586F2DFA9BDCC6675C2546793A69E5CC"
-               BuildableName = "libMBProgressHUD.a"
+               BlueprintIdentifier = "41FA54D12162DAD51D02FC58A2CD5034"
+               BuildableName = "MBProgressHUD.framework"
                BlueprintName = "MBProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "586F2DFA9BDCC6675C2546793A69E5CC"
-            BuildableName = "libMBProgressHUD.a"
+            BlueprintIdentifier = "41FA54D12162DAD51D02FC58A2CD5034"
+            BuildableName = "MBProgressHUD.framework"
             BlueprintName = "MBProgressHUD"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
