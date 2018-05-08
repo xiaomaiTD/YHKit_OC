@@ -23,9 +23,8 @@ typedef NS_ENUM(NSUInteger, YHNetRequestSerializerType) {
 };
 /** Response serializer type */
 typedef NS_ENUM(NSUInteger, YHNetResponseSerializerType) {
-    YHNetResponseSerializerTypeHTTP,        // HTTP
-    YHNetResponseSerializerTypeJSON,        // JSON
-    YHNetResponseSerializerTypeXMLParser,   // XML
+    YHNetResponseSerializerTypeHTTP,        // HTTP -- 原始数据
+    YHNetResponseSerializerTypeJSON,        // JSON -- JSON格式
 };
 /** Network status */
 typedef NS_ENUM(NSUInteger, YHNetworkStatus) {
@@ -159,8 +158,15 @@ static NSTimeInterval const kYHNetTimeOutInterval = 30.f;
 @end
 
 @interface YHNet (YHResponseHTTP)
-
++ (AFHTTPResponseSerializer *)responseSerializerForHTTP;
 @end
+
+
+
+@interface YHNet (YHResponseJSON)
++ (AFJSONResponseSerializer *)responseSerializerForJSON;
+@end
+
 
 
 NS_ASSUME_NONNULL_END

@@ -518,5 +518,59 @@
 
 
 @implementation YHNet (YHResponseHTTP)
-
++ (AFHTTPResponseSerializer *)responseSerializerForHTTP{
+    static AFHTTPResponseSerializer *HTTPResponseSerializer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        HTTPResponseSerializer = [AFHTTPResponseSerializer serializer];
+        HTTPResponseSerializer.acceptableContentTypes = [NSSet setWithObjects:
+                                                         @"application/json",
+                                                         @"text/json",
+                                                         @"text/javascript",
+                                                         @"text/html",
+                                                         @"text/css",
+                                                         @"text/xml",
+                                                         @"text/plain",
+                                                         @"application/javascript",
+                                                         @"image/*",
+                                                         nil];
+    });
+    return HTTPResponseSerializer;
+}
 @end
+
+
+@implementation YHNet (YHResponseJSON)
++ (AFJSONResponseSerializer *)responseSerializerForJSON{
+    static AFJSONResponseSerializer *JSONResponseSerializer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        JSONResponseSerializer = [AFJSONResponseSerializer serializer];
+        JSONResponseSerializer.acceptableContentTypes = [NSSet setWithObjects:
+                                                        @"application/json",
+                                                        @"text/json",
+                                                        @"text/javascript",
+                                                        @"text/html",
+                                                        @"text/css",
+                                                        @"text/xml",
+                                                        @"text/plain",
+                                                        @"application/javascript",
+                                                        @"image/*",
+                                                        nil];
+    });
+    return JSONResponseSerializer;
+}
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+
